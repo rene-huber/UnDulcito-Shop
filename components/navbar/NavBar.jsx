@@ -1,5 +1,5 @@
 "use client"
-import "@styles/Navbar.scss"
+import style from './navbar.module.css'
 import { Menu, Person, Search, ShoppingCart } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import { signOut, useSession } from 'next-auth/react'
@@ -27,26 +27,26 @@ const Navbar = () => {
   const cart = user?.cart
   
   return (
-    <div className='navbar'>
+    <div className={style.navbar}>
  <Link href='/'>
         <img src='/assets/logo.png' alt='logo'/>
       </Link>
 
-      <div className='navbar_search'>
+      <div className={style.navbar_search}>
         <input type='text' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)}/>
         <IconButton disabled={query === ""}>
           <Search sx={{ color: "red" }} onClick={searchWork}/>
         </IconButton>
       </div>
 
-      <div className='navbar_right'>
+      <div className={style.navbar_right}>
         {user && (
-          <a href="/cart" className="cart">
+          <Link href="/cart" className={style.cart}>
             <ShoppingCart sx={{ color: "gray" }}/>
             Cart <span>({cart?.length})</span>
-          </a>
+          </Link>
         )}
-        <button className='navbar_right_account' onClick={() => setDropdownMenu(!dropdownMenu)}>
+        <button id='button' className={style.navbar_right_account} onClick={() => setDropdownMenu(!dropdownMenu)}>
           <Menu sx={{ color: "gray" }} />
           {!user ? (
             <Person sx={{ color: "gray" }} />
@@ -56,20 +56,20 @@ const Navbar = () => {
         </button>
 
         {dropdownMenu && !user && (
-          <div className='navbar_right_accountmenu'>
+          <div className={style.navbar_right_accountmenu}>
             <Link href="/login">Log In</Link>
             <Link href="/register">Sign Up</Link>
           </div>
         )}
 
         {dropdownMenu && user && (
-          <div className='navbar_right_accountmenu'>
+          <div className={style.navbar_right_accountmenu}>
             <Link href="/wishlist">Wishlist</Link>
             <Link href="/cart">Cart</Link>
             <Link href="/order">Orders</Link>
             <Link href={`/shop?id=${user._id}`}>Your Shop</Link>
             <Link href="/create-work">Sell Your Work</Link>
-            <a onClick={handleLogout}>Log Out</a>
+            <button onClick={handleLogout}>Log Out</button> 
           </div>
         )}
 
