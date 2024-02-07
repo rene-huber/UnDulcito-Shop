@@ -1,5 +1,5 @@
 "use client"
-import { signIn } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
@@ -10,6 +10,9 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const router = useRouter()
+  const  status  = useSession();
+
+console.log(status?.data?.user?.email, "statusefefefefefefefe")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,6 +68,9 @@ const Login = () => {
           <p>Log In with Google</p>
           <FcGoogle />
         </button>
+        <div onClick={() => signIn("github")}>Sign in with Github</div>
+        <div onClick={() => signOut()}>Sign Out</div>
+
         <a href="/register">Don't have an account? Sign In Here</a>
       </div>
     </div>
