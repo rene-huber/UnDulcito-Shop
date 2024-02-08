@@ -6,6 +6,7 @@ import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { useRouter } from "next/navigation"
+import Image from 'next/image'
 
 const Navbar = () => {
   const { data: session } = useSession()
@@ -25,11 +26,11 @@ const Navbar = () => {
   }
 
   const cart = user?.cart
-  
+//   console.log(query, "query")
   return (
     <div className={style.navbar}>
  <Link href='/'>
-        <img src='/assets/logo.png' alt='logo'/>
+              <Image src='/dancingbaby.gif' alt='logo' width={100} height={100} />
       </Link>
 
       <div className={style.navbar_search}>
@@ -51,7 +52,7 @@ const Navbar = () => {
           {!user ? (
             <Person sx={{ color: "gray" }} />
           ) : (
-            <img src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} />
+            <Image src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} width={30} height={30} />
           )}
         </button>
 
