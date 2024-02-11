@@ -1,5 +1,6 @@
 import Work from "@/models/work";
 import { connectToDB } from "@/mongodb/dataBase";
+import { writeFile } from "fs/promises"
 
 export const GET = async (req, { params }) => {
   try {
@@ -43,7 +44,7 @@ export const PATCH = async (req, { params }) => {
         const buffer = Buffer.from(bytes);
 
         // Define the destination path for the uploaded file
-        const workImagePath = `C:/Users/Phuc/Desktop/artify/public/uploads/${photo.name}`;
+        const workImagePath = `/Users/pro/Desktop/tienda/public/uploads/${photo.name}`;
 
         // Write the buffer to the filessystem
         await writeFile(workImagePath, buffer);

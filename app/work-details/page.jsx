@@ -15,6 +15,7 @@ import {
 } from "@mui/icons-material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const WorkDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -190,7 +191,7 @@ const WorkDetails = () => {
 
         <div className="photos">
           {work.workPhotoPaths?.slice(0, visiblePhotos).map((photo, index) => (
-            <img
+            <Image width={100} height={100}
               src={photo}
               alt="work-demo"
               key={index}
@@ -207,18 +208,7 @@ const WorkDetails = () => {
           )}
         </div>
 
-        <hr />
-
-        <div className="profile">
-          <img
-            src={work.creator.profileImagePath}
-            alt="profile"
-            onClick={() => router.push(`/shop?id=${work.creator._id}`)}
-          />
-          <h3>Created by {work.creator.username}</h3>
-        </div>
-
-        <hr />
+        
 
         <h3>About this product</h3>
         <p>{work.description}</p>
