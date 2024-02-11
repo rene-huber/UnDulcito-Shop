@@ -32,7 +32,7 @@ const admin = session?.user?.role
   return (
     <div className={style.navbar}>
  <Link href='/'>
-              <Image src='/dancingbaby.gif' alt='logo' width={100} height={100} />
+              <Image src='/logo.png' alt='logo' width={200} height={70} />
       </Link>
 
       <div className={style.navbar_search}>

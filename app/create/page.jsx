@@ -13,7 +13,7 @@ const CreateWork = () => {
 
   const [work, setWork] = useState({
     creator: "",
-    category: "All",
+    category: "",
     title: "",
     description: "",
     price: "",
