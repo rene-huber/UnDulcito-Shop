@@ -1,18 +1,15 @@
 "use client"
-import style from './navbar.module.css'
+import "@/styles/Navbar.scss"
 import { Menu, Person, Search, ShoppingCart } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { useRouter } from "next/navigation"
-import Image from 'next/image'
 
 const Navbar = () => {
   const { data: session } = useSession()
   const user = session?.user
-
-const admin = session?.user?.role
 
   const [dropdownMenu, setDropdownMenu] = useState(false)
 
@@ -28,52 +25,51 @@ const admin = session?.user?.role
   }
 
   const cart = user?.cart
-//   console.log(query, "query")
+  
   return (
-    <div className={style.navbar}>
+    <div className='navbar'>
  <Link href='/'>
-              <Image src='/dancingbaby.gif' alt='logo' width={100} height={100} />
+        <img src='/logo.png' alt='logo'/>
       </Link>
 
-      <div className={style.navbar_search}>
+      <div className='navbar_search'>
         <input type='text' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)}/>
         <IconButton disabled={query === ""}>
           <Search sx={{ color: "red" }} onClick={searchWork}/>
         </IconButton>
       </div>
 
-      <div className={style.navbar_right}>
+      <div className='navbar_right'>
         {user && (
-          <Link href="/cart" className={style.cart}>
+          <a href="/cart" className="cart">
             <ShoppingCart sx={{ color: "gray" }}/>
             Cart <span>({cart?.length})</span>
-          </Link>
+          </a>
         )}
-        <button id='button' className={style.navbar_right_account} onClick={() => setDropdownMenu(!dropdownMenu)}>
+        <button className='navbar_right_account' onClick={() => setDropdownMenu(!dropdownMenu)}>
           <Menu sx={{ color: "gray" }} />
           {!user ? (
             <Person sx={{ color: "gray" }} />
           ) : (
-            <Image src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} width={30} height={30} />
+            <img src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} />
           )}
         </button>
 
         {dropdownMenu && !user && (
-          <div className={style.navbar_right_accountmenu}>
+          <div className='navbar_right_accountmenu'>
             <Link href="/login">Log In</Link>
             <Link href="/register">Sign Up</Link>
           </div>
         )}
 
         {dropdownMenu && user && (
-          <div className={style.navbar_right_accountmenu}>
+          <div className='navbar_right_accountmenu'>
             <Link href="/wishlist">Wishlist</Link>
             <Link href="/cart">Cart</Link>
             <Link href="/order">Orders</Link>
-            {/* <Link href={`/shop?id=${user._id}`}>Your Shop</Link> */}
-{admin === "admin" && <Link href="/create">Create</Link>}
-
-            <button onClick={handleLogout}>Log Out</button> 
+            <Link href={`/shop?id=${user._id}`}>Your Shop</Link>
+            <Link href="/create-work">Sell Your Work</Link>
+            <a onClick={handleLogout}>Log Out</a>
           </div>
         )}
 
