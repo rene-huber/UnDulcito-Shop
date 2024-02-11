@@ -15,6 +15,7 @@ import getStripe from "@/utils/getStripe";
 import toast from "react-hot-toast";
 import Navbar from "@/components/NavBar";
 
+
 const Cart = () => {
   const { data: session, update } = useSession();
   const cart = session?.user?.cart;
@@ -94,7 +95,7 @@ const Cart = () => {
 
   return !session?.user?.cart ? <Loader /> : (
     <>
- <Navbar />
+<Navbar />
       <div className="cart">
         <div className="details">
           <div className="top">
