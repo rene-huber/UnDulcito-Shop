@@ -86,6 +86,7 @@ export const authOptions = {
               user = await User.create({
                 email: profile.email,
                 username: profile.name,
+                role: "user",
                 profileImagePath: userProfileImagePath,
                 wishlist: [],
                 cart: [],

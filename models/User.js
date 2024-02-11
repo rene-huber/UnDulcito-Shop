@@ -14,6 +14,11 @@ const UserSchema = new Schema({
   password: {
     type: String,
   },
+  role: {
+    type: String,
+    enum: ['user', 'admin'], 
+    default: 'user' 
+  },
   profileImagePath: {
     type: String,
     required: [true, "Profile image is required"],
