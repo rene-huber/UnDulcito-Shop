@@ -13,7 +13,7 @@ import Loader from "@/components/loading/Loader";
 import "@/styles/Cart.scss";
 import getStripe from "@/utils/getStripe";
 import toast from "react-hot-toast";
-import Navbar from "@/components/NavBar";
+
 
 
 const Cart = () => {
@@ -95,7 +95,7 @@ const Cart = () => {
 
   return !session?.user?.cart ? <Loader /> : (
     <>
-<Navbar />
+
       <div className="cart">
         <div className="details">
           <div className="top">

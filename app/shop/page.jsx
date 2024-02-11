@@ -1,7 +1,7 @@
 "use client";
 
 import Loader from "@/components/loading/Loader"
-import Navbar from "@/components/navbar/Navbar"
+
 import WorkList from "@/components/WorkList";
 import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
@@ -41,7 +41,7 @@ const Shop = () => {
 
   return loading ? <Loader /> : (
     <>
-      <Navbar />
+   
 
       {loggedInUserId === profileId && (
         <h1 className="title-list">Your Works</h1>

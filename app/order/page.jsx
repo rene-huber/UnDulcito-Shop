@@ -12,7 +12,7 @@ const Order = () => {
 
   return (
     <>
-      <Navbar />
+   
       <div className="orders">
         <h1>Your Order</h1>
         <div className="order-list">
