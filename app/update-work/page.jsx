@@ -1,6 +1,7 @@
 "use client";
 import Loader from "@/components/loading/Loader"
 
+import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Form from "@/components/form/Form";
 import { useRouter } from "next/navigation";
@@ -11,9 +12,8 @@ const UpdateWork = () => {
 
   const [loading, setLoading] = useState(true);
 
-
-  const router = useRouter();
-  const { id: workId } = router.query?.id;
+  const searchParams = useSearchParams();
+  const workId = searchParams.get("id");
 
   const [work, setWork] = useState({
     category: "",
@@ -49,7 +49,7 @@ const UpdateWork = () => {
     }
   }, [workId]);
 
-
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
