@@ -1,6 +1,6 @@
 "use client"
 
-import Navbar from "@/components/navbar/Navbar";
+
 import Loader from "@/components/loading/Loader";
 import WorkList from "@/components/WorkList";
 import "@/styles/Wishlist.scss";
@@ -14,7 +14,7 @@ const Wishlist = () => {
 
   return !session ? <Loader /> :(
     <>
-      <Navbar />
+    
 
       <h1 className="title-list">
         Your Wishlist

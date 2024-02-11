@@ -1,7 +1,7 @@
 "use client"
 
 import Loader from "@/components/loading/Loader"
-import Navbar from "@/components/navbar/Navbar"
+
 import WorkList from '@/components/WorkList'
 import { useParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
@@ -34,7 +34,7 @@ const SearchPage = () => {
 
   return loading ? <Loader /> : (
     <>
-      <Navbar />
+  
 
       <h1 className='title-list'>{query} result(s)</h1>
 
