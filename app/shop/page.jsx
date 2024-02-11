@@ -4,7 +4,7 @@ import Loader from "@/components/loading/Loader"
 
 import WorkList from "@/components/WorkList";
 import { useSession } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import "@/styles/Shop.scss"
 
@@ -14,8 +14,9 @@ const Shop = () => {
   const { data: session } = useSession();
   const loggedInUserId = session?.user?._id;
 
-  const searchParams = useSearchParams();
-  const profileId = searchParams.get("id");
+  const router = useRouter();
+  const { id: profileId } = router.query?.id;
+
 
   const [workList, setWorkList] = useState([]);
   const [profile, setProfile] = useState({});
