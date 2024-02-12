@@ -109,10 +109,7 @@ const WorkCard = ({ work }) => {
       <div className="info">
         <div>
           <h3>{work.title}</h3>
-          <div className="creator">
-            <img src={work.creator.profileImagePath} alt="creator" />
-            <span>{work.creator.username}</span> in <span>{work.category}</span>
-          </div>
+          
         </div>
         <div className="price">${work.price}</div>
       </div>

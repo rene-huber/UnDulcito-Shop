@@ -1,12 +1,12 @@
 "use client";
 
-import Loader from "@/components/Loader"
-import Navbar from "@/components/navbar/Navbar"
+import Loader from "@/components/Loader";
+import Navbar from "@/components/navbar/Navbar";
 import WorkList from "@/components/WorkList";
 import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import "@/styles/Shop.scss"
+import "@/styles/Shop.scss";
 
 const Shop = () => {
   const [loading, setLoading] = useState(true);
@@ -39,19 +39,13 @@ const Shop = () => {
     }
   }, [profileId]);
 
-  return loading ? <Loader /> : (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <Navbar />
 
-      {loggedInUserId === profileId && (
-        <h1 className="title-list">Your Works</h1>
-      )}
-
-      {loggedInUserId !== profileId && (
-        <h1 className="title-list">{profile.username}'s Works</h1>
-      )}
-
-      <WorkList data={workList}/>
+      <WorkList data={workList} />
     </>
   );
 };
