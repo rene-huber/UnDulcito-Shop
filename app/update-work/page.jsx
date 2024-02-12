@@ -1,11 +1,12 @@
 "use client";
-import Loader from "@/components/loading/Loader"
+import Loader from "@/components/Loader"
 import Navbar from "@/components/navbar/Navbar"
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import Form from "@/components/form/Form";
+import Form from "@/components/Form";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+
 
 const UpdateWork = () => {
   const { data: session } = useSession();

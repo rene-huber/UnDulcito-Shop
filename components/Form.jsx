@@ -1,9 +1,8 @@
 import { categories } from "@/utils/categories";
-import styles from './form.module.css'
 import { IoIosImages } from "react-icons/io";
 import { BiTrash } from "react-icons/bi";
 
-
+import "@/styles/Form.scss";
 
 const Form = ({ type, work, setWork, handleSubmit }) => {
   const handleUploadPhotos = (e) => {
@@ -36,15 +35,15 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
   };
 
   return (
-    <div className={styles.form}>
+    <div className="form">
       <h1>{type} Your Work</h1>
       <form onSubmit={handleSubmit}>
         <h3>Which of these categories best describes your work?</h3>
-        <div className={styles.categoryList}>
+        <div className="category-list">
           {categories?.map((item, index) => (
             <p
               key={index}
-              className={`${work.category === item ? styles.selected : ""}`}
+              className={`${work.category === item ? "selected" : ""}`}
               onClick={() => {
                 setWork({ ...work, category: item });
               }}
@@ -96,8 +95,8 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
               onChange={handleUploadPhotos}
               multiple
             />
-            <label htmlFor="image" className={styles.together}>
-              <div className={styles.icon}>
+            <label htmlFor="image" className="together">
+              <div className="icon">
                 <IoIosImages />
               </div>
               <p>Upload from your device</p>
@@ -106,7 +105,7 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
         )}
 
         <h3>What make your Work attractive?</h3>
-        <div className={styles.description}>
+        <div className="description">
           <p>Title</p>
           <input
             type="text"
@@ -134,10 +133,10 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
             name="price"
             value={work.price}
             required
-            className={styles.price}
+            className="price"
           />
         </div>
-        <button className={styles.submit_btn} type="submit">PUBLISH YOUR WORK</button>
+        <button className="submit_btn" type="submit">PUBLISH YOUR WORK</button>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client"
 
-import Loader from "@/components/loading/Loader"
+import Loader from "@/components/Loader"
 import Navbar from "@/components/navbar/Navbar"
 import WorkList from '@/components/WorkList'
 import { useParams } from 'next/navigation'
