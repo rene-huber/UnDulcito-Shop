@@ -1,7 +1,7 @@
 "use client";
 
 import Loader from "@/components/Loader";
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from "@/components/Navbar";
 import WorkList from "@/components/WorkList";
 import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";

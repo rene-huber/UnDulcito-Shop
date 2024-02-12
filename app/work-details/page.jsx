@@ -4,7 +4,7 @@ import "@/styles/WorkDetails.scss";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Loader from "@/components/Loader"
-import Navbar from "@/components/navbar/Navbar"
+import Navbar from "@/components/Navbar"
 import {
   ArrowForwardIos,
   Edit,
@@ -207,21 +207,12 @@ const WorkDetails = () => {
           )}
         </div>
 
-        <hr />
+    
 
-        <div className="profile">
-          <img
-            src={work.creator.profileImagePath}
-            alt="profile"
-            onClick={() => router.push(`/shop?id=${work.creator._id}`)}
-          />
-          <h3>Created by {work.creator.username}</h3>
-        </div>
 
-        <hr />
-
-        <h3>About this product</h3>
         <p>{work.description}</p>
+      
+        <p>Category: {work.category}</p>
 
         <h1>${work.price}</h1>
         <button type="submit" onClick={addToCart}>
