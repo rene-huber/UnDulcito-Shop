@@ -28,7 +28,7 @@ const Feed = () => {
     <Loader />
   ) : (
     <>
-      <div className="categories">
+      {/* <div className="categories">
         {categories?.map((item, index) => (
           <p
             onClick={() => setSelectedCategory(item)}
@@ -38,7 +38,7 @@ const Feed = () => {
             {item}
           </p>
         ))}
-      </div>
+      </div> */}
 
       <WorkList data={workList} />
     </>
