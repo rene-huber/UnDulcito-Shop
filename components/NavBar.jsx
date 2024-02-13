@@ -37,9 +37,13 @@ const Navbar = () => {
   
   return (
     <div className='navbar'>
- <Link href="/">
-        <Image src='/logo.png' alt='logo' height={77} width={112} />
+<>
+<Link href="/">
+        <Image src='/logo.png' alt='logo' height={77} width={112} /> 
+        <p className="telefono">(+1) 321-7329403</p>
       </Link>
+      
+</>
 
       <div className='navbar_search'>
         <input type='text' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)}/>

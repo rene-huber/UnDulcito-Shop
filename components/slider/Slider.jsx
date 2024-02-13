@@ -24,15 +24,21 @@ const Slider = () => {
           disableOnInteraction: false,
         }}
       >
+      
         <SwiperSlide>
-          <p className="texto">Slide 1</p>
-        <img src="/slider/g-1.jpg" alt="slider" />
-        </SwiperSlide>
-
-        <SwiperSlide>
+        <p className="texto">Slide 1</p>
         <img src="/slider/slide1.jpg" alt="slider" />
         </SwiperSlide>
 
+        <SwiperSlide>
+        <p className="texto">Slide 1</p>
+        <img src="/slider/slide3.jpg" alt="slider" />
+        </SwiperSlide>
+
+        <SwiperSlide>
+        <p className="texto">Slide 1</p>
+        <img src="/slider/slide2.jpg" alt="slider" />
+        </SwiperSlide>
     
 
 
