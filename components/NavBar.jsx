@@ -6,6 +6,7 @@ import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 const Navbar = () => {
   const { data: session } = useSession()
@@ -14,14 +15,20 @@ const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false)
   const admin = session?.user?.role
 
+  const router = useRouter()
 
   const handleLogout = async () => {
     signOut({ callbackUrl: '/login' })
   }
+ 
+  const  cartLogin = async () => {
+    if (!session) {
+      router.push("/login");
+      return;
+    }}
 
   const [query, setQuery] = useState('')
  
-  const router = useRouter()
   const searchWork = async () => {
     router.push(`/search/${query}`)
   }
@@ -30,8 +37,8 @@ const Navbar = () => {
   
   return (
     <div className='navbar'>
- <Link href='/'>
-        <img src='/logo.png' alt='logo'/>
+ <Link href="/">
+        <Image src='/logo.png' alt='logo' height={77} width={112} />
       </Link>
 
       <div className='navbar_search'>
@@ -42,16 +49,19 @@ const Navbar = () => {
       </div>
 
       <div className='navbar_right'>
-        {user && (
-          <a href="/cart" className="cart">
-            <ShoppingCart sx={{ color: "gray" }}/>
+        
+          <a href="/cart" className="cart" onClick={(e) => {
+            e.stopPropagation();     
+            cartLogin();
+          }}>
+            <ShoppingCart sx={{ color: "white" }}/>
             Cart <span>({cart?.length})</span>
           </a>
-        )}
+       
         <button className='navbar_right_account' onClick={() => setDropdownMenu(!dropdownMenu)}>
-          <Menu sx={{ color: "gray" }} />
+          <Menu sx={{ color: "white" }} />
           {!user ? (
-            <Person sx={{ color: "gray" }} />
+            <Person sx={{ color: "white" }} />
           ) : (
             <img src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} />
           )}

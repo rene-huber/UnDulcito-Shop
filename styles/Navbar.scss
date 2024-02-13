@@ -2,20 +2,38 @@
 @import "./breakpoints.scss";
 
 .navbar {
-  padding: 15px 80px 30px;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.135);
+  padding: 11px 80px 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  backdrop-filter: blur(5px);
+  background: #0000008a;
+  z-index: 999;
+  width: 100vw;
 
   @include sm {
     padding: 10px;
   }
 
   img {
-    width: 100px;
+   
     cursor: pointer;
   }
+
+.navbar_right_account {
+  background: #600000; 
+  border-radius: 5px;
+  padding: 5px;
+  
+
+    @include sm {
+      display: flex;
+    }
+  }
+
 
   &_search {
     border: 1px solid $grey;
@@ -51,7 +69,7 @@
 
     .cart {
       margin: 0;
-      border: 1px solid $grey;
+   
       padding: 5px 15px;
       border-radius: 10px;
       display: flex;
