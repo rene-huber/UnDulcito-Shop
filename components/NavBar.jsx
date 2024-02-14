@@ -7,6 +7,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { useRouter } from "next/navigation"
 import Image from "next/image"
+import Promo from  "@/components/Promo"
 
 const Navbar = () => {
   const { data: session } = useSession()
@@ -36,14 +37,18 @@ const Navbar = () => {
   const cart = user?.cart
   
   return (
+    <>
+    
+    <Promo />
     <div className='navbar'>
-<>
+      
+<div>
 <Link href="/">
         <Image src='/logo.png' alt='logo' height={77} width={112} /> 
-        <p className="telefono">(+1) 321-7329403</p>
+        
       </Link>
-      
-</>
+    
+</div>
 
       <div className='navbar_search'>
         <input type='text' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)}/>
@@ -91,6 +96,7 @@ const Navbar = () => {
       </div>
       
     </div>
+    </>
   )
 }
 

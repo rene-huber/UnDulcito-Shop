@@ -3,28 +3,28 @@
 
 .promo{
   width: 100vw;
-  background: #000;
+  background: #480000;
   color: white;
   text-align: center;
   font-size: 13px;
   word-spacing: 2px;
-  position: fixed;
+ position: fixed;
  padding: 1px;
   z-index: 999999;
 }
 
 
 .navbar {
-  margin-top: 13px;
+  margin-top: 0px;
   border-top: 4px solid #000;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.135);
-  padding: 11px 80px 5px;
+  border-bottom: 5px solid 5px solid rgb(255 255 255 / 11%);
+  padding: 21px 80px 1px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  backdrop-filter: blur(5px);
-  background: #00000060;
+  backdrop-filter: blur(6px);
+  background: rgb(255 181 181 / 59%);
   z-index: 999;
   width: 100vw;
 
@@ -57,8 +57,11 @@
 .telefono{    width: auto;
   height: 23px;
   background: transparent;
-  color: rgba(0, 0, 0, 0.349);
+  color: rgba(0, 0, 0, 0.749);
+  
   float: right;
+  font-size: 11px;
+  letter-spacing: 1px;
   margin-top: 24px;
   margin-left: 11px;}
 
@@ -70,7 +73,7 @@
     display: flex;
     gap: 40px;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.787);
+    background-color: rgb(255 255 255 / 83%);
 
     input {
       border: none;
