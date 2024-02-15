@@ -1,30 +1,70 @@
 @import "./variables.module.scss";
 @import "./breakpoints.scss";
 
+
+
+
 .promo{
   width: 100vw;
-  background: #480000;
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  word-spacing: 2px;
- position: fixed;
+
+  
+ position: relative;
  padding: 1px;
   z-index: 999999;
 }
 
+.promo-container {
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9dd8e+0,f2bf85+5,ff8b8b+56,ff6868+94,d62f2f+100 */
+background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 5%,rgba(255,139,139,1) 56%,rgba(255,104,104,1) 94%,rgba(214,47,47,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  position: fixed; 
+  z-index: 999999;
+  width: 100%; 
+  padding: 3px 2%; 
+  color: white;
+  text-align: left;
+  font-size: 13px;
+  word-spacing: 2px;
+  border-top:  2px solid #ff6400;
+
+  p {
+    margin: 0;
+    line-height: 19px;
+  }
+  
+ 
+
+}
+
+
+.call {
+  color: rgb(255, 255, 255);
+
+  display: flex;
+
+}
+.derecha{ margin-right:199px}
+.person{
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.489);
+  border: 1px solid #ffffff6d;
+  padding: 3px 5px;
+}
 
 .navbar {
   margin-top: 0px;
-  border-top: 4px solid #000;
-  border-bottom: 5px solid 5px solid rgb(255 255 255 / 11%);
-  padding: 21px 80px 1px;
+  border-top: 2px solid #ffa714;
+  border-bottom: 3px solid #ffffff5c;
+  padding: 35px 80px 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   backdrop-filter: blur(6px);
-  background: rgb(255 181 181 / 59%);
+  background: rgb(255 139 139 / 25%);
   z-index: 999;
   width: 100vw;
 
@@ -38,9 +78,10 @@
   }
 
 .navbar_right_account {
-  background: rgb(219 0 0 / 36%);
+  background: rgba(219, 0, 0, 0.0);
   border-radius: 5px;
-  border: 1px solid black;
+  // border: 1px solid rgb(0, 0, 0);
+ 
   padding: 5px;
   
 
@@ -66,21 +107,22 @@
   margin-left: 11px;}
 
   &_search {
-    border: 1px solid $grey;
+    width: 455px;
     border-radius: 30px;
     height: 40px;
     padding: 0px 20px;
     display: flex;
     gap: 40px;
     align-items: center;
-    background-color: rgb(255 255 255 / 83%);
-
+    background-color: rgb(255 255 255 / 73%);
+    @include shadow;
     input {
       border: none;
       outline: none;
       width: 100%;
       border-radius: 11px;
       background: transparent;
+      color: #7c0000;
     }
 
     &:hover {
@@ -109,7 +151,7 @@
       align-items: center;
       gap: 4px;
       color: #f8f8f8;
-      background: #00000082;
+      background: rgb(0 0 0 / 52%);
 
       span {
         font-weight: 700;

@@ -9,21 +9,26 @@
   gap: 50px;
   padding: 20px 30px;
   margin-bottom: 60px;
-background: rgb(176 0 0);
-  // border: 1px solid black;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9dd8e+0,f2bf85+5,ff8b8b+56,ff6868+94,d62f2f+100 */
+background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 5%,rgba(255,139,139,1) 56%,rgba(255,104,104,1) 94%,rgba(214,47,47,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
   border-width: 1px 0 1px 0;
+  border-bottom: 2px solid #ff6400;
+  
 
   p {
     font-weight: 600;
     font-size: 20px;
     cursor: pointer;
 color: white;
+text-shadow: 7px 8px 15px rgb(50 50 50 / 29%);
+
     &:hover {
-      color: $pinkred
+      color: rgb(126, 0, 0);
     }
   }
 
   .selected {
-    color: $pinkred
+    color: rgb(57, 57, 57)
   }
 }

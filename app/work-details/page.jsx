@@ -142,7 +142,7 @@ const WorkDetails = () => {
   return loading ? (
     <Loader />
   ) : (
-    <>
+    <div className="bajar">
       <Navbar />
       <div className="work-details">
         <div className="title">
@@ -220,7 +220,7 @@ const WorkDetails = () => {
           ADD TO CART
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

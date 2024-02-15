@@ -1,6 +1,9 @@
 "use client"
 import "@/styles/Navbar.scss"
 import { Menu, Person, Search, ShoppingCart } from '@mui/icons-material'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LoginIcon from '@mui/icons-material/Login';
 import { IconButton } from '@mui/material'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
@@ -37,7 +40,7 @@ const Navbar = () => {
   const cart = user?.cart
   
   return (
-    <>
+    <main>
     
     <Promo />
     <div className='navbar'>
@@ -58,7 +61,9 @@ const Navbar = () => {
       </div>
 
       <div className='navbar_right'>
-        
+      <a href="/login">
+
+</a>
           <a href="/cart" className="cart" onClick={(e) => {
             e.stopPropagation();     
             cartLogin();
@@ -68,13 +73,17 @@ const Navbar = () => {
           </a>
        
         <button className='navbar_right_account' onClick={() => setDropdownMenu(!dropdownMenu)}>
-          <Menu sx={{ color: "white" }} />
+          
           {!user ? (
-            <Person sx={{ color: "white" }} />
-          ) : (
-            <img src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} />
+          <div className="person">   
+          <Person sx={{ color: "white", fontSize: 25 }} /></div>
+          ) : (<>
+          <Menu sx={{ color: "white" }}/>
+          <img src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} />
+          </>
           )}
         </button>
+
 
         {dropdownMenu && !user && (
           <div className='navbar_right_accountmenu'>
@@ -96,7 +105,7 @@ const Navbar = () => {
       </div>
       
     </div>
-    </>
+    </main>
   )
 }
 
