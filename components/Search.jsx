@@ -14,7 +14,7 @@ function Searching() {
   return (
     <div>
          <div className='navbar_search'>
-        <input type='text' placeholder='Search...' value={query} onChange={(e) => setQuery(e.target.value)}/>
+        <input type='text' placeholder='Find your favorite cookies' value={query} onChange={(e) => setQuery(e.target.value)}/>
         <IconButton disabled={query === ""}>
           <Search sx={{ color: "red" }} onClick={searchWork}/>
         </IconButton>

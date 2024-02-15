@@ -29,6 +29,7 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
   font-size: 13px;
   word-spacing: 2px;
   border-top:  2px solid #ff6400;
+  border-bottom: 1px solid #ffffffe3;
 
   p {
     margin: 0;
@@ -92,7 +93,9 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
 
 
 
-
+.navbar_search_input{
+  color: #F90!important;
+}
 
 
 .telefono{    width: auto;

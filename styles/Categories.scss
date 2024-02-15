@@ -21,14 +21,14 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
     font-size: 20px;
     cursor: pointer;
 color: white;
-text-shadow: 7px 8px 15px rgb(50 50 50 / 29%);
+text-shadow: 7px 8px 15px rgb(50 50 50 / 31%);
 
     &:hover {
-      color: rgb(126, 0, 0);
+      color: rgb(225 43 43)
     }
   }
 
   .selected {
-    color: rgb(57, 57, 57)
+    color: rgb(225 43 43)
   }
 }

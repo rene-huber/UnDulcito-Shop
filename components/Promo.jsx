@@ -20,7 +20,7 @@ const Promo = () => {
 
         <div className="call">
         <Link href="/login"><p>Register / Login</p> </Link>
-          <InstagramIcon sx={{ color: "white" ,fontSize: 20, marginRight: 1, marginLeft: 1  }} />
+          <InstagramIcon sx={{ color: "white" ,fontSize: 20, marginRight: 2, marginLeft: 2  }} />
           <WhatsAppIcon sx={{ color: "white" ,fontSize: 20, marginRight: 1 }} />
         </div>
         </div>
