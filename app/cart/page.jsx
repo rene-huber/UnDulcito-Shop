@@ -1,10 +1,6 @@
 "use client";
 
-<<<<<<< HEAD
 import Navbar from "@/components/Navbar";
-=======
-
->>>>>>> main
 import {
   AddCircle,
   ArrowCircleLeft,

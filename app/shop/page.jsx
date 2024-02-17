@@ -1,7 +1,5 @@
-import Shop from '@/components/Shop'
-import { Suspense } from 'react'
+"use client";
 
-<<<<<<< HEAD
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import WorkList from "@/components/WorkList";
@@ -53,14 +51,3 @@ const Shop = () => {
 };
 
 export default Shop;
-=======
-function Store() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-   <Shop />
-     </Suspense>
-  )
-}
-
-export default Store
->>>>>>> main
