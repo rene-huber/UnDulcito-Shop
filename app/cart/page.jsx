@@ -1,6 +1,10 @@
 "use client";
 
+<<<<<<< HEAD
+import Navbar from "@/components/Navbar";
+=======
 
+>>>>>>> main
 import {
   AddCircle,
   ArrowCircleLeft,
@@ -8,7 +12,7 @@ import {
   RemoveCircle,
 } from "@mui/icons-material";
 import { useSession } from "next-auth/react";
-import Loader from "@/components/loading/Loader";
+import Loader from "@/components/Loader";
 
 import "@/styles/Cart.scss";
 import getStripe from "@/utils/getStripe";

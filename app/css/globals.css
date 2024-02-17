@@ -4,7 +4,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: Averta, sans-serif;
+<<<<<<< HEAD
+  background: rgb(248, 248, 248);
+=======
   background: rgb(202, 202, 202);
+>>>>>>> main
 }
 
 a {
@@ -18,4 +22,7 @@ h1, h2, h3, h4, h5, p {
 
 * {
   box-sizing: border-box;
+
+
 }
+

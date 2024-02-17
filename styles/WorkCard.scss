@@ -1,14 +1,18 @@
 @import "./variables.module.scss";
 
+.icon{z-index: 99!important;}
 .work-card {
   position: relative;
   cursor: pointer;
-  padding: 10px;
+  padding: 13px 13px 10px 13px;
   border-radius: 10px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffdbdb+0,ffdbdb+12,ffefef+93,fff2f2+100 */
+background: linear-gradient(45deg,  rgba(255,219,219,1) 0%,rgba(255,219,219,1) 12%,rgba(255,239,239,1) 93%,rgba(255,242,242,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-  &:hover {
-    @include shadow;
-  }
+  box-shadow: 5px 12px 15px rgb(0 0 0 / 18%);
+  border: 1px solid white;
+
+
 
   .slider-container {
     width: 360px;
@@ -46,7 +50,7 @@
           align-items: center;
           justify-content: center;
           background-color: rgba(255, 255, 255, 0.7);
-          z-index: 99;
+          z-index: 999;
 
           &:hover {
             background-color: white;
@@ -93,11 +97,13 @@
     }
 
     .price {
-      background: $lightblue;
+      background: #ffffff;
       padding: 10px;
       border-radius: 10px;
       font-weight: 700;
       font-size: 17px;
+      box-shadow: 1px 1px 5px #0000;
+      color: #ff4040;
     }
   }
 

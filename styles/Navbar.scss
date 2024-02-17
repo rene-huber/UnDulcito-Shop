@@ -1,34 +1,131 @@
 @import "./variables.module.scss";
 @import "./breakpoints.scss";
 
+
+
+
+.promo{
+  width: 100vw;
+
+  
+ position: relative;
+ padding: 1px;
+  z-index: 999999;
+}
+
+.promo-container {
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9dd8e+0,f2bf85+5,ff8b8b+56,ff6868+94,d62f2f+100 */
+background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 5%,rgba(255,139,139,1) 56%,rgba(255,104,104,1) 94%,rgba(214,47,47,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  position: fixed; 
+  z-index: 999999;
+  width: 100%; 
+  padding: 3px 2%; 
+  color: white;
+  text-align: left;
+  font-size: 13px;
+  word-spacing: 2px;
+  border-top:  2px solid #ff6400;
+  border-bottom: 1px solid #ffffffe3;
+
+  p {
+    margin: 0;
+    line-height: 19px;
+  }
+  
+ 
+
+}
+
+
+.call {
+  color: rgb(255, 255, 255);
+
+  display: flex;
+
+}
+.derecha{ margin-right:199px}
+.person{
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.489);
+  border: 1px solid #ffffff6d;
+  padding: 3px 5px;
+}
+
 .navbar {
-  padding: 15px 80px 30px;
+  margin-top: 0px;
+  border-top: 2px solid #ffa714;
+  border-bottom: 3px solid #ffffff5c;
+  padding: 35px 80px 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: fixed;
+  backdrop-filter: blur(6px);
+  background: rgb(255 139 139 / 25%);
+  z-index: 999;
+  width: 100vw;
 
   @include sm {
     padding: 10px;
   }
 
   img {
-    width: 100px;
+   
     cursor: pointer;
   }
 
+.navbar_right_account {
+  background: rgba(219, 0, 0, 0.0);
+  border-radius: 5px;
+  // border: 1px solid rgb(0, 0, 0);
+ 
+  padding: 5px;
+  
+
+    @include sm {
+      display: flex;
+    }
+  }
+
+
+
+.navbar_search_input{
+  color: #F90!important;
+}
+
+
+.telefono{    width: auto;
+  height: 23px;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.749);
+  
+  float: right;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 24px;
+  margin-left: 11px;}
+
   &_search {
-    border: 1px solid $grey;
+    width: 455px;
     border-radius: 30px;
-    height: 50px;
+    height: 40px;
     padding: 0px 20px;
     display: flex;
     gap: 40px;
     align-items: center;
-
+    background-color: rgb(255 255 255 / 73%);
+    @include shadow;
     input {
       border: none;
       outline: none;
+      width: 100%;
+      border-radius: 11px;
+      background: transparent;
+      color: #7c0000;
     }
 
     &:hover {
@@ -51,12 +148,13 @@
 
     .cart {
       margin: 0;
-      border: 1px solid $grey;
-      padding: 5px 15px;
-      border-radius: 10px;
+      padding: 6px 15px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
+      color: #f8f8f8;
+      background: rgb(0 0 0 / 52%);
 
       span {
         font-weight: 700;

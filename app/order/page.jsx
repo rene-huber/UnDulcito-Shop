@@ -1,7 +1,12 @@
 "use client"
 
+<<<<<<< HEAD
+import Loader from "@/components/Loader"
+import Navbar from "@/components/Navbar"
+=======
 import Loader from "@/components/loading/Loader"
 
+>>>>>>> main
 import "@/styles/Order.scss"
 import { useSession } from "next-auth/react"
 

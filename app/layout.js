@@ -3,8 +3,8 @@ import "@/app/css/globals.css";
 import  AuthProvider  from "@/providers/AuthProvider";
 import Navbar from "@/components/NavBar";
 
-
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata = {
   title: "Create Next App",

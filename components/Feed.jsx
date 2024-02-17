@@ -4,7 +4,7 @@ import { categories } from "@/utils/categories";
 import WorkList from "@/components/WorkList";
 import { useEffect, useState } from "react";
 import "@/styles/Categories.scss";
-import Loader from "@/components/loading/Loader";
+import Loader from "@/components/Loader";
 
 const Feed = () => {
   const [loading, setLoading] = useState(true);
