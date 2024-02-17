@@ -28,7 +28,7 @@ const admin = session?.user?.role
   }
 
   const cart = user?.cart
-//   console.log(query, "query")
+
   return (
     <div className={style.navbar}>
  <Link href='/'>

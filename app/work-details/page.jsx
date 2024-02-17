@@ -1,7 +1,6 @@
 import Details from '@/components/Details'
 import { Suspense } from 'react'
 
-<<<<<<< HEAD
 import "@/styles/WorkDetails.scss";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -227,14 +226,3 @@ const WorkDetails = () => {
 };
 
 export default WorkDetails;
-=======
-function DetailsWork() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-   <Details />
-    </Suspense>
-  )
-}
-
-export default DetailsWork
->>>>>>> main
