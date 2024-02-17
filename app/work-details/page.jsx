@@ -3,8 +3,8 @@
 import "@/styles/WorkDetails.scss";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import Loader from "@/components/Loader"
-import Navbar from "@/components/Navbar"
+import Loader from "@/components/Loader";
+import Navbar from "@/components/Navbar";
 import {
   ArrowForwardIos,
   Edit,
@@ -120,16 +120,22 @@ const WorkDetails = () => {
       const newCart = [...cart, newCartItem];
 
       try {
-        await fetch(`/api/user/${userId}/cart`, {
+        const res = await fetch(`/api/user/${userId}/cart`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ cart: newCart }),
         });
-        update({ user: { cart: newCart } });
+
+        if (res.ok) {
+          update({ user: { cart: newCart } });
+          router.push("/cart");
+        } else {
+          console.error("Error al actualizar el carrito:", res.statusText);
+        }
       } catch (err) {
-        console.log(err);
+        console.error("Error de red o de servidor:", err);
       }
     } else {
       confirm("This item is already in your cart");
@@ -207,11 +213,8 @@ const WorkDetails = () => {
           )}
         </div>
 
-    
-
-
         <p>{work.description}</p>
-      
+
         <p>Category: {work.category}</p>
 
         <h1>${work.price}</h1>
