@@ -6,7 +6,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 43px;
+  row-gap: 51px 
+px
+;
+    column-gap: 41px;
 
   @include lg {
     padding: 0 20px 120px;

@@ -41,7 +41,7 @@ export async function POST (req) {
 
     /* Create a new Work */
     const newWork = new Work({
-      creator, title, description, price, workPhotoPaths
+      creator,category, title, description, price, workPhotoPaths
     })
 
     await newWork.save()

@@ -1,4 +1,4 @@
-import React from 'react'
+import "@/styles/Success.scss"
 
 const Canceled = () => {
   return (
