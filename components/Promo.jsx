@@ -3,6 +3,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Link from "next/link";
 
 const Promo = () => {

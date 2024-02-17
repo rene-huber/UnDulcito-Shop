@@ -1,7 +1,7 @@
 
 .swiper {
     width: 100vw;
-    height:730px;
+    height:690px;
  
   
   }
@@ -30,7 +30,7 @@
     left: 25%;
     transform: translate(-50%, -50%);
  
-    font-size: calc(2vw + 1.7rem);
+    font-size: calc(2vw + 1.9rem);
     
     text-align: left;
     flex-direction: column;

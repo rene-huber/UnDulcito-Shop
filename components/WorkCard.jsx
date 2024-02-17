@@ -128,6 +128,7 @@ const WorkCard = ({ work }) => {
               backgroundColor: "white",
               padding: "5px",
               fontSize: "30px",
+              zIndex: "100",
             }}
           />
         </div>
