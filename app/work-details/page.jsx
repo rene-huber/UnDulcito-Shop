@@ -1,5 +1,4 @@
-import Details from '@/components/Details'
-import { Suspense } from 'react'
+"use client";
 
 import "@/styles/WorkDetails.scss";
 import { useSearchParams } from "next/navigation";
