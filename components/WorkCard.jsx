@@ -9,6 +9,7 @@ import "@/styles/WorkCard.scss";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Image from "next/image";
 
 const WorkCard = ({ work }) => {
   console.log(work);
@@ -82,7 +83,7 @@ const WorkCard = ({ work }) => {
         >
           {work.workPhotoPaths?.map((photo, index) => (
             <div className="slide" key={index}>
-              <img src={photo} alt="work" />
+              <Image src={photo} alt="work" width={300} height={200}/>
               <div
                 className="prev-button"
                 onClick={(e) => {

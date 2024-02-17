@@ -1,14 +1,12 @@
-import Shop from '@/components/Shop'
-import { Suspense } from 'react'
+"use client";
 
-<<<<<<< HEAD
-import Loader from "@/components/Loader";
-import Navbar from "@/components/Navbar";
+import Loader from "@/components/loading/Loader"
+
 import WorkList from "@/components/WorkList";
 import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import "@/styles/Shop.scss";
+import "@/styles/Shop.scss"
 
 const Shop = () => {
   const [loading, setLoading] = useState(true);
@@ -41,26 +39,21 @@ const Shop = () => {
     }
   }, [profileId]);
 
-  return loading ? (
-    <Loader />
-  ) : (
+  return loading ? <Loader /> : (
     <>
-      <Navbar />
+   
 
-      <WorkList data={workList} />
+      {loggedInUserId === profileId && (
+        <h1 className="title-list">Your Works</h1>
+      )}
+
+      {loggedInUserId !== profileId && (
+        <h1 className="title-list">{profile.username}</h1>
+      )}
+
+      <WorkList data={workList}/>
     </>
   );
 };
 
 export default Shop;
-=======
-function Store() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-   <Shop />
-     </Suspense>
-  )
-}
-
-export default Store
->>>>>>> main

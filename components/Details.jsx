@@ -1,12 +1,11 @@
-import Details from '@/components/Details'
-import { Suspense } from 'react'
+"use client";
 
-<<<<<<< HEAD
 import "@/styles/WorkDetails.scss";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import Loader from "@/components/Loader"
-import Navbar from "@/components/Navbar"
+import Loader from "@/components/loading/Loader"
+
+
 import {
   ArrowForwardIos,
   Edit,
@@ -17,6 +16,7 @@ import {
 } from "@mui/icons-material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const WorkDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -144,8 +144,8 @@ const WorkDetails = () => {
   return loading ? (
     <Loader />
   ) : (
-    <div className="bajar">
-      <Navbar />
+    <>
+
       <div className="work-details">
         <div className="title">
           <h1>{work.title}</h1>
@@ -192,7 +192,7 @@ const WorkDetails = () => {
 
         <div className="photos">
           {work.workPhotoPaths?.slice(0, visiblePhotos).map((photo, index) => (
-            <img
+            <Image width={100} height={100}
               src={photo}
               alt="work-demo"
               key={index}
@@ -209,12 +209,10 @@ const WorkDetails = () => {
           )}
         </div>
 
-    
+        
 
-
+        <h3>About this product</h3>
         <p>{work.description}</p>
-      
-        <p>Category: {work.category}</p>
 
         <h1>${work.price}</h1>
         <button type="submit" onClick={addToCart}>
@@ -222,19 +220,8 @@ const WorkDetails = () => {
           ADD TO CART
         </button>
       </div>
-    </div>
+    </>
   );
 };
 
 export default WorkDetails;
-=======
-function DetailsWork() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-   <Details />
-    </Suspense>
-  )
-}
-
-export default DetailsWork
->>>>>>> main

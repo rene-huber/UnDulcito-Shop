@@ -1,6 +1,10 @@
 "use client";
 
+<<<<<<< HEAD
 import Navbar from "@/components/Navbar";
+=======
+
+>>>>>>> main
 import {
   AddCircle,
   ArrowCircleLeft,
@@ -13,6 +17,8 @@ import Loader from "@/components/Loader";
 import "@/styles/Cart.scss";
 import getStripe from "@/utils/getStripe";
 import toast from "react-hot-toast";
+
+
 
 const Cart = () => {
   const { data: session, update } = useSession();
@@ -93,7 +99,7 @@ const Cart = () => {
 
   return !session?.user?.cart ? <Loader /> : (
     <>
-      <Navbar />
+
       <div className="cart">
         <div className="details">
           <div className="top">

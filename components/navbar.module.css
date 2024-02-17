@@ -1,0 +1,147 @@
+/* CSS correspondiente al archivo navbar.module.css */
+.navbar {
+    padding: 15px 80px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Media queries basadas en los breakpoints definidos en breakpoints.scss */
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 10px;
+    }
+  }
+  
+
+
+  
+  .navbar img {
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  .navbar_search {
+    border: 1px solid #bdb9b9; /* Valor de $grey de variables.module.scss */
+    border-radius: 30px;
+    height: 50px;
+    padding: 0px 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .navbar_search input {
+    border: none;
+    outline: none;
+  }
+  
+  .navbar_search:hover {
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.2); /* Aplicación del mixin shadow */
+  }
+  
+  @media (max-width: 1000px) { /* Uso de lg para media query */
+    .navbar_search {
+      display: none;
+    }
+  }
+  
+  .navbar_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    .navbar_right {
+      gap: 0px;
+    }
+  }
+  
+  .navbar_right .cart {
+    margin: 0;
+    border: 1px solid #bdb9b9; /* Valor de $grey de variables.module.scss */
+    padding: 5px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .navbar_right .cart span {
+    font-weight: 700;
+  }
+  
+  .navbar_right_account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .navbar_right_account img {
+    width: 40px;
+  }
+  
+  .navbar_right_accountmenu {
+    position: absolute;
+    background-color: white;
+    right: 60px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px 0;
+    border: 1px solid #F6F6F6; /* Valor de $lightgrey de variables.module.scss */
+    border-radius: 20px;
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.2); /* Aplicación del mixin shadow */
+    z-index: 9999;
+  }
+  
+
+
+  #button{
+    padding: 10px 15px;
+    background: linear-gradient(to right, rgb(59, 130, 246), rgb(144, 78, 232));
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #button:hover {
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+  }
+  
+
+
+
+
+  @media (max-width: 480px) {
+    .navbar_right_accountmenu {
+      right: 20px;
+    }
+  }
+  
+  .navbar_right_accountmenu a {
+    padding: 8px 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .navbar_right_accountmenu a:hover {
+    color: #f8395a; /* Valor de $pinkred de variables.module.scss */
+    background-color: rgba(217, 213, 213, 0.2);
+  }
+  

@@ -71,7 +71,7 @@ console.log(status?.data?.user?.email, "statusefefefefefefefe")
         <div onClick={() => signIn("github")}>Sign in with Github</div>
         <div onClick={() => signOut()}>Sign Out</div>
 
-        <a href="/register">Don't have an account? Sign In Here</a>
+        <a href="/register">Dont have an account? Sign In Here</a>
       </div>
     </div>
   );
