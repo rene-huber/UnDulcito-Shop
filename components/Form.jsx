@@ -36,9 +36,9 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
 
   return (
     <div className="form">
-      <h1>{type} Your Work</h1>
+      {/* <h1>{type} Your Work</h1> */}
       <form onSubmit={handleSubmit}>
-        <h3>Which of these categories best describes your work?</h3>
+        <h3>Categorias, elige una:</h3>
         <div className="category-list">
           {categories?.map((item, index) => (
             <p
@@ -53,7 +53,7 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
           ))}
         </div>
 
-        <h3>Add some photos of your work</h3>
+        <h3>Aqui van las fotos</h3>
         {work.photos.length < 1 && (
           <div className="photos">
             <input
@@ -68,7 +68,7 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
               <div className="icon">
                 <IoIosImages />
               </div>
-              <p>Upload from your device</p>
+              <p>Sube una o varias fotos</p>
             </label>
           </div>
         )}
@@ -104,31 +104,31 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
           </div>
         )}
 
-        <h3>What make your Work attractive?</h3>
+      
         <div className="description">
-          <p>Title</p>
+          <p>Titulo o nombre</p>
           <input
             type="text"
-            placeholder="Title"
+            placeholder=""
             onChange={handleChange}
             name="title"
             value={work.title}
             required
           />
-          <p>Description</p>
+          <p>Descripcion , etc .. </p>
           <textarea
             type="text"
-            placeholder="Description"
+            placeholder=""
             onChange={handleChange}
             name="description"
             value={work.description}
             required
           />
-          <p>Now, set your PRICE</p>
+          <p>Precio</p>
           <span>$</span>
           <input
             type="number"
-            placeholder="Price"
+            placeholder="Precio"
             onChange={handleChange}
             name="price"
             value={work.price}
@@ -136,7 +136,7 @@ const Form = ({ type, work, setWork, handleSubmit }) => {
             className="price"
           />
         </div>
-        <button className="submit_btn" type="submit">PUBLISH YOUR WORK</button>
+        <button className="submit_btn" type="submit">Publicar</button>
       </form>
     </div>
   );

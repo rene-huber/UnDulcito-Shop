@@ -3,6 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import "@/styles/login.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");

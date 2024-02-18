@@ -83,7 +83,7 @@ const UpdateWork = () => {
     <Loader />
   ) : (
     <>
-      <Navbar />
+    
       <Form
         type="Edit"
         work={work}

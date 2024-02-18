@@ -13,7 +13,7 @@ const Wishlist = () => {
   console.log(wishlist)
 
   return !session ? <Loader /> :(
-    <>
+    <div className="bajar">
     
 
       <h1 className="title-list">
@@ -21,7 +21,7 @@ const Wishlist = () => {
       </h1>
 
       <WorkList data={wishlist} />
-    </>
+    </div>
   )
 }
 
