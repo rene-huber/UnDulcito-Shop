@@ -155,7 +155,7 @@ const WorkCard = ({ work }) => {
             <FavoriteBorder
               sx={{
                 borderRadius: "50%",
-                backgroundColor: "white",
+                backgroundColor: "#fff6f6",
                 padding: "5px",
                 fontSize: "30px",
               }}
