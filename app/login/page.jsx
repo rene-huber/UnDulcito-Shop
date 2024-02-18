@@ -3,6 +3,8 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa";
+
 import "@/styles/login.scss";
 
 const Login = () => {
@@ -41,9 +43,13 @@ console.log(status?.data?.user?.email, "statusefefefefefefefe")
     signIn("google", { callbackUrl: "/" });
   };
 
+  const loginWithFacebook = () => {
+    signIn("google", { callbackUrl: "/" });
+  };
+
   return (
     <div className="login">
- 
+  <img src="/login.jpg" alt="login" className="login_decor" />
       <div className="login_content">
         <form className="login_content_form" onSubmit={handleSubmit}>
           <input
@@ -69,8 +75,11 @@ console.log(status?.data?.user?.email, "statusefefefefefefefe")
           <p>Log In with Google</p>
           <FcGoogle />
         </button>
-        <div onClick={() => signIn("github")}>Sign in with Github</div>
-        <div onClick={() => signOut()}>Sign Out</div>
+        
+        <button className="google" onClick={loginWithFacebook}>
+          <p>Log In with Facebook</p>
+          <FaFacebook style={{ color: 'blue', fontSize: '18px' }} />
+        </button>
 
         <a href="/register">Dont have an account? Sign In Here</a>
       </div>

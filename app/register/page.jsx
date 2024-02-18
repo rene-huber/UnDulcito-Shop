@@ -1,10 +1,11 @@
 "use client";
-
 import { FcGoogle } from "react-icons/fc"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
 import Image from "next/image";
+
+import "@/styles/register.scss"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -62,7 +63,7 @@ const Register = () => {
 
   return (
     <div className="register">
-     
+     <img src="/login.jpg" alt="login" className="register_decor" />
       <div className="register_content">
         <form className="register_content_form" onSubmit={handleSubmit}>
           <input
@@ -123,10 +124,7 @@ const Register = () => {
             Register
           </button>
         </form>
-        <button type="button" onClick={loginWithGoogle} className="google">
-          <p>Log In with Google</p>
-          <FcGoogle />
-        </button>
+    
         <a href="/login">Already have an account? Log In Here</a>
       </div>
     </div>
