@@ -143,13 +143,13 @@ const WorkDetails = () => {
     }
   };
 
-  console.log(session?.user?.cart);
+
 
   return loading ? (
     <Loader />
   ) : (
-    <div className="bajar">
-      <Navbar />
+    <div>
+     
       <div className="work-details">
         <div className="title">
           <h1>{work.title}</h1>

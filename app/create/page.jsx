@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Form from '@/components/Form'
+import "@/styles/Order.scss"
 
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
@@ -52,7 +53,7 @@ const CreateWork = () => {
   }
 
   return (
-    <>
+    <div className='bajar'>
      
       <Form
         type="Create"
@@ -60,7 +61,7 @@ const CreateWork = () => {
         setWork={setWork}
         handleSubmit={handleSubmit}
       />
-    </>
+    </div>
   )
 }
 

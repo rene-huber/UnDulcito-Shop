@@ -42,11 +42,11 @@ const Shop = () => {
   return loading ? (
     <Loader />
   ) : (
-    <>
-      <Navbar />
+    <div className="bajar">
+     
 
       <WorkList data={workList} />
-    </>
+    </div>
   );
 };
 

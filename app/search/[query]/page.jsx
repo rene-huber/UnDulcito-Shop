@@ -33,13 +33,13 @@ const SearchPage = () => {
   }, [query])
 
   return loading ? <Loader /> : (
-    <>
+    <div className="wrap-search">
   
 
       <h1 className='title-list'>{query} result(s)</h1>
 
       <WorkList data={workList} />
-    </>
+    </div>
   )
 }
 

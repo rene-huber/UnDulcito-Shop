@@ -93,7 +93,7 @@ const Cart = () => {
 
   return !session?.user?.cart ? <Loader /> : (
     <>
-      <Navbar />
+   
       <div className="cart">
         <div className="details">
           <div className="top">
