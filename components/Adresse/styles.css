@@ -4,3 +4,10 @@
 
 
 }
+
+@media only screen and (max-width: 600px) {
+    .wrap{
+        display: none;
+
+    }
+    }   

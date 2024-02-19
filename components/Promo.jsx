@@ -1,9 +1,10 @@
 import "@/styles/Navbar.scss";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookIcon from '@mui/icons-material/Facebook';
 import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+
 import Link from "next/link";
 
 const Promo = () => {
@@ -21,8 +22,18 @@ const Promo = () => {
 
         <div className="call">
         <Link href="/login"><p>Register / Login</p> </Link>
-          <InstagramIcon sx={{ color: "white" ,fontSize: 20, marginRight: 2, marginLeft: 2  }} />
+          
+          <Link href="https://www.instagram.com/">
+          <InstagramIcon sx={{ color: "white" ,fontSize: 20, marginRight: 0, marginLeft: 2  }} />
+        </Link>
+          <Link href="https://www.instagram.com/">
+          <FacebookIcon sx={{ color: "white" ,fontSize: 20, marginRight: 1, marginLeft: 1  }} />
+        </Link>
+
+
+          <Link href="https://api.whatsapp.com/send?phone=+13217329403">
           <WhatsAppIcon sx={{ color: "white" ,fontSize: 20, marginRight: 1 }} />
+        </Link>
         </div>
         </div>
       </div>
