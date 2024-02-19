@@ -4,7 +4,7 @@ import "@/styles/WorkDetails.scss";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Loader from "@/components/Loader";
-import Navbar from "@/components/Navbar";
+
 import {
   ArrowForwardIos,
   Edit,

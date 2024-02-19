@@ -1,6 +1,6 @@
 "use client";
 import Loader from "@/components/Loader"
-import Navbar from "@/components/Navbar"
+
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Form from "@/components/Form";

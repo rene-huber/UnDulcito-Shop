@@ -67,13 +67,18 @@ const Navbar = () => {
       <a href="/login">
 
 </a>
-          <a href="/cart" className="cart" onClick={(e) => {
-            e.stopPropagation();     
-            cartLogin();
-          }}>
-            <ShoppingCart sx={{ color: "white" }}/>
-            Cart <span>({cart?.length})</span>
-          </a>
+{user ? (
+  <Link href="/cart" className="cart">
+    <ShoppingCart sx={{ color: "white" }}/>
+    Cart <span>({cart?.length})</span>
+  </Link>
+) : (
+  <Link href="/login" className="cart">
+    <ShoppingCart sx={{ color: "white" }}/>
+    Cart <span>({cart?.length})</span>
+  </Link>
+)}
+
        
         <button className='navbar_right_account' onClick={() => setDropdownMenu(!dropdownMenu)}>
           

@@ -178,16 +178,16 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
     &_accountmenu {
       position: absolute;
       background-color: white;
-      right: 60px;
-      top: 100px;
+      right: 37px;
+      top: 113px;
       display: flex;
       flex-direction: column;
       width: 200px;
       padding: 10px 0;
       border: 1px solid $lightgrey;
       border-radius: 20px;
-      @include shadow;
       z-index: 9999;
+      @include shadow;
 
       @include sm {
         right: 20px;

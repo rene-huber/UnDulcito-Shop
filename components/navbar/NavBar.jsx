@@ -1,5 +1,4 @@
-"use client"
-import style from './navbar.module.css'
+"use client"import style from './navbar.module.css'
 import { Menu, Person, Search, ShoppingCart } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import { signOut, useSession } from 'next-auth/react'
@@ -12,17 +11,13 @@ const Navbar = () => {
   const { data: session } = useSession()
   const user = session?.user
 
-const admin = session?.user?.role
-
-  const [dropdownMenu, setDropdownMenu] = useState(false)
+  const [query, setQuery] = useState('')
+  const router = useRouter()
 
   const handleLogout = async () => {
     signOut({ callbackUrl: '/login' })
   }
 
-  const [query, setQuery] = useState('')
- 
-  const router = useRouter()
   const searchWork = async () => {
     router.push(`/search/${query}`)
   }
@@ -31,8 +26,8 @@ const admin = session?.user?.role
 
   return (
     <div className={style.navbar}>
- <Link href='/'>
-              <Image src='/logo.png' alt='logo' width={200} height={70} />
+      <Link href='/'>
+        <Image src='/logo.png' alt='logo' width={200} height={70} />
       </Link>
 
       <div className={style.navbar_search}>
@@ -58,27 +53,9 @@ const admin = session?.user?.role
           )}
         </button>
 
-        {dropdownMenu && !user && (
-          <div className={style.navbar_right_accountmenu}>
-            <Link href="/login">Log In</Link>
-            <Link href="/register">Sign Up</Link>
-          </div>
-        )}
-
-        {dropdownMenu && user && (
-          <div className={style.navbar_right_accountmenu}>
-            <Link href="/wishlist">Wishlist</Link>
-            <Link href="/cart">Cart</Link>
-            <Link href="/order">Orders</Link>
-            {/* <Link href={`/shop?id=${user._id}`}>Your Shop</Link> */}
-{admin === "admin" && <Link href="/create">Create</Link>}
-
-            <button onClick={handleLogout}>Log Out</button> 
-          </div>
-        )}
+        ...
 
       </div>
-      
     </div>
   )
 }

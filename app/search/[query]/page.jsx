@@ -1,7 +1,7 @@
 "use client"
 
 import Loader from "@/components/Loader"
-import Navbar from "@/components/Navbar"
+
 import WorkList from '@/components/WorkList'
 import { useParams } from 'next/navigation'
 import React, { useState, useEffect } from 'react'
