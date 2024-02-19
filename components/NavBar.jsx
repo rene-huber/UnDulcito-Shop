@@ -1,10 +1,11 @@
 "use client"
 import "@/styles/Navbar.scss"
 import { Menu, Person, Search, ShoppingCart } from '@mui/icons-material'
-import InstagramIcon from '@mui/icons-material/Instagram';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import LoginIcon from '@mui/icons-material/Login';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton } from '@mui/material'
+import ListAltIcon from '@mui/icons-material/ListAlt';
+
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -17,6 +18,7 @@ const Navbar = () => {
   const user = session?.user
 
   const [dropdownMenu, setDropdownMenu] = useState(false)
+  
   const admin = session?.user?.role
 
   const router = useRouter()
@@ -86,7 +88,7 @@ const Navbar = () => {
           <div className="person">   
           <Person sx={{ color: "white", fontSize: 25 }} /></div>
           ) : (<>
-          <Menu sx={{ color: "white" }}/>
+          <Menu sx={{ color: "white" }} id="hamburger"/>
           <img src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} />
           </>
           )}
@@ -102,11 +104,11 @@ const Navbar = () => {
 
         {dropdownMenu && user && (
           <div className='navbar_right_accountmenu'>
-            <Link href="/wishlist">Wishlist</Link>
-            <Link href="/cart">Cart</Link>
-            <Link href="/order">Orders</Link>
+            <Link href="/wishlist"><FavoriteIcon sx={{ color: "red" ,fontSize: 17, marginRight: 1}}/> Wishlist</Link>
+            <Link href="/cart"><ShoppingCart sx={{ color: "red",fontSize: 17, marginRight: 1 }}/> Cart</Link>
+            <Link href="/order"><ListAltIcon sx={{color: "red",fontSize: 17, marginRight: 1}}/> Orders</Link>
             {admin === "admin" && <Link href="/create">Create</Link>}
-            <a onClick={handleLogout}>Log Out</a>
+            <a onClick={handleLogout}><LogoutIcon sx={{color: "red",fontSize: 17, marginRight: 1}}/>Log Out</a>
           </div>
         )}
 

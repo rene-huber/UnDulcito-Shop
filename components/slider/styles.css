@@ -1,7 +1,7 @@
 
 .swiper {
     width: 100vw;
-    height:690px;
+    /* height:690px; */
  
   
   }
@@ -28,39 +28,29 @@
     position: absolute;
     top: 59%;
     left: 25%;
-    transform: translate(-50%, -50%);
- 
-    font-size: calc(2vw + 1.9rem);
-    
+    transform: translate(-50%, -50%); 
+    font-size: calc(2vw + 1.9rem);    
     text-align: left;
     flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  text-align: left;
+  
   font-weight: 400 !important;
   background-image: linear-gradient(to right, #be0707, #700535);
-
-  /* Asegurarse de que el texto sea transparente para mostrar el fondo */
   -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  /* Prefijos para soporte cross-browser */
+  background-clip: text;  color: transparent;
   -webkit-text-fill-color: transparent;
   
     }
-  @media (max-width: 768px) {
-    .texto {
-      font-size: calc(3vw + 1rem); }
-  }
-  
+
+ 
 
 
-
+.swiper-wrapper{height: 100% !important;}
 
   .mySwiper {
     width: 100%;
-    height: 654px;
+    height: 537px;
     margin: 0 auto;
   background: rgb(126, 1, 1);
   overflow: hidden;
@@ -92,17 +82,49 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    mix-blend-mode: multiply
   }
-  
-  .swiper-slide {
-    width: 80%;
+
+  @media only screen and (max-width: 600px) {
+    .texto {
+      display: flex;    
+      top: 58%;
+      left: 31%;
+      transform: translate(-50%, -50%);     
+   
+      font-size: calc(2vw + 1.4rem);    
+      text-align: left;
+      flex-direction: column;
+    justify-content: left;
+    align-items:left;
+    width: 200px;
+
+    background-image: linear-gradient(to right, #be0707, #ea036b);
+    -webkit-background-clip: text;
+
+    background-clip: text;  color: transparent;
+    -webkit-text-fill-color: transparent;
+    
+
+    }
+
+      .mySwiper{
+        height: 241px;}
+
+    .swiper-slide img {
+      opacity: .8;  }
+
+
+
+      .parrafo{
+        display: none;   
+      }
+      .swiper-button-prev, .swiper-button-next {
+        display: none;
+      }
   }
-  
-  .swiper-slide:nth-child(2n) {
-    width: 60%;
-  }
-  
-  .swiper-slide:nth-child(3n) {
-    width: 40%;
-  }
-  
+
+
+
+
+
