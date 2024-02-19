@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
-import "@/styles/login.scss";
+import "@/styles/Login.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
