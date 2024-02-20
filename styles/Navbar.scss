@@ -36,31 +36,28 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
     line-height: 19px;
   }
   
+  
+  .call {
+    color: rgb(255, 255, 255);
+    display: flex;
+  }
+  
+  .derecha {
+    margin-right: 11%;
+    
+  }
+  
+
+  
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     align-items: center;
     padding:2px  0px; 
     font-size: 12px;
     display: none ;
-  }
 
-  .call {
-    color: rgb(255, 255, 255);
-    display: flex;
-  }
-
-  .derecha {
-    margin-right: 11%;
    
   }
-
-  .person {
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.489);
-    border: 1px solid #ffffff6d;
-    padding: 3px 5px;
-  }
-
 
 }
 
@@ -72,11 +69,16 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
 
 }
 .derecha{ margin-right:199px}
+
+
 .person{
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.489);
   border: 1px solid #ffffff6d;
   padding: 3px 5px;
+  @media only screen and (max-width: 600px) {
+    background-color: #000000a3;
+  }
 }
 
 
@@ -102,12 +104,13 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
 
   @media only screen and (max-width: 600px) {
     padding: 1% 1% 1% 5%;
-    background: rgba(172, 89, 89, 0.334);
+    background: #ff00001f;
+    backdrop-filter: blur(4px);
     #hamburger{
       display: none;
     }
     img{
-      width: 50px;
+      width: 81px;
       height: auto;
     }
    }
@@ -194,6 +197,7 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
         font-weight: 700;
       }
       @media only screen and (max-width: 600px) {
+        background-color: #000000a3 ;
         padding: 5px;
       }
 
@@ -211,6 +215,7 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
       img {
         width: 40px;
       }
+     
     }
 
     &_accountmenu {
@@ -229,6 +234,7 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
 
       @include sm {
         right: 20px;
+        top: 60px;
       }
 
       a {
