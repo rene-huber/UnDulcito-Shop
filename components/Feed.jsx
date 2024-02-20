@@ -27,7 +27,7 @@ const Feed = () => {
   return loading ? (
     <Loader />
   ) : (
-    <>
+    <div>
       <div className="categories">
         {categories?.map((item, index) => (
           <p
@@ -39,9 +39,11 @@ const Feed = () => {
           </p>
         ))}
       </div>
+<div className="feedWrap">
 
       <WorkList data={workList} />
-    </>
+</div>
+    </div>
   );
 };
 
