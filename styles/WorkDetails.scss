@@ -1,15 +1,31 @@
 @import "./variables.module.scss";
 @import "./breakpoints.scss";
 
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  label {
+    margin-right: 10px;
+  }
+
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px; // Ajusta el ancho según sea necesario
+  }
+}
 
 
 .work-details {
-  padding: 210px 80px 120px 10px;
+  padding: 210px 70px 120px 70px;
   display: flex;
   flex-direction: column;
   align-items: left;
   gap: 9px;
-  max-width: 1200px;
+  max-width: 833px;
   margin: 0 auto;
  border-radius: 11px;
 

@@ -6,6 +6,7 @@ import { signIn } from "next-auth/react"
 import Image from "next/image";
 
 import "@/styles/register.scss"
+import Link from "next/link";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -125,7 +126,7 @@ const Register = () => {
           </button>
         </form>
     
-        <a href="/login">Already have an account? Log In Here</a>
+        <Link href="/login">Already have an account? Log In Here</Link>
       </div>
     </div>
   );

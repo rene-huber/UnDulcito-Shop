@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import Link from "next/link";
 
 import "@/styles/Login.scss";
 
@@ -81,7 +82,7 @@ console.log(status?.data?.user?.email, "statusefefefefefefefe")
           <FaFacebook style={{ color: 'blue', fontSize: '18px' }} />
         </button>
 
-        <a href="/register">Dont have an account? Sign In Here</a>
+        <Link href="/register">Dont have an account? Sign In Here</Link>
       </div>
     </div>
   );

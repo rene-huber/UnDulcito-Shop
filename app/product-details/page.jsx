@@ -15,6 +15,7 @@ import {
 } from "@mui/icons-material";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,14 @@ const ProductDetails = () => {
 
   const searchParams = useSearchParams();
   const workId = searchParams.get("id");
+
+
+  const [quantity, setQuantity] = useState(1); // Estado para almacenar la cantidad seleccionada por el usuario
+
+  const handleQuantityChange = (event) => {
+    setQuantity(parseInt(event.target.value)); // Actualiza la cantidad seleccionada cuando el usuario cambia el valor en el campo de entrada
+  };
+
 
   /* GET WORK DETAILS */
   useEffect(() => {
@@ -113,7 +122,7 @@ const ProductDetails = () => {
       category: work.category,
       creator: work.creator,
       price: work.price,
-      quantity: 1,
+      quantity: quantity,
     };
 
     if (!isInCart) {
@@ -182,7 +191,7 @@ const ProductDetails = () => {
           >
             {work.workPhotoPaths?.map((photo, index) => (
               <div className="slide" key={index}>
-                <img src={photo} alt="work" />
+                <Image src={photo} alt="work" width={700} height={500}/>
                 <div className="prev-button" onClick={(e) => goToPrevSlide(e)}>
                   <ArrowBackIosNew sx={{ fontSize: "15px" }} />
                 </div>
@@ -215,8 +224,20 @@ const ProductDetails = () => {
 
         <p>{work.description}</p>
 
-     
-        <h1>${work.price}</h1>
+        <div className="quantity-selector">
+        <label htmlFor="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          value={quantity}
+          onChange={handleQuantityChange}
+        />
+      </div>
+
+
+      <h1>Price: ${work.price * quantity}</h1>
         <button type="submit" onClick={addToCart}>
           <ShoppingCart />
           ADD TO CART
