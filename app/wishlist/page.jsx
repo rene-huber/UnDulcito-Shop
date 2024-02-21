@@ -14,7 +14,7 @@ const Wishlist = () => {
   return !session ? (
     <Loader />
   ) : (
-    <div className="bajar">
+    <div className="wish">
       <h1 className="title-list">Your Wishlist</h1>
       {isEmpty ? (
         <p className="noItem">No items in your wishlist</p>

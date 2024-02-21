@@ -12,7 +12,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const WorkCard = ({ work }) => {
-  console.log(work);
+
   /* SLIDER FOR PHOTOS */
   const [currentIndex, setCurrentIndex] = useState(0);
 

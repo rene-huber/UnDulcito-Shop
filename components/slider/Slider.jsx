@@ -11,6 +11,7 @@ import "swiper/css/autoplay";
 import "./styles.css";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { Button } from "@mui/material";
+import Image from "next/image";
 
 const grandstander = Grandstander({
   subsets: ["latin"],
@@ -42,21 +43,21 @@ const Slider = () => {
 
     </p>     
     
-        <img src="/slider/slide1.jpg" alt="slider" />
+         <Image src="/slider/slide1.jpg" alt="slider" width={1772}  height={886}/>
         </SwiperSlide>
 
          <SwiperSlide>
         <p className="texto">Baked with Love,<br />Enjoyed with a Smile.<br />
         <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you'll find a 
     tempting selection of homemade cookies, each one crafted with care and the finest ingredients</span>  </p>
-        <img src="/slider/slide3.jpg" alt="slider" />
+         <Image src="/slider/slide3.jpg" alt="slider" width={1772}  height={886}/>
         </SwiperSlide>
 
        <SwiperSlide>
         <p className="texto">Every Number Count <br />with Sweetness.<br />
         <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you'll find a 
     tempting selection of homemade cookies, each one crafted with care and the finest ingredients</span> </p>
-        <img src="/slider/slide2.jpg" alt="slider" />
+        <Image src="/slider/galletasMix.jpg" alt="slider" width={1772}  height={886}/>
         </SwiperSlide> 
     
 
