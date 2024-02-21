@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import User from "@/models/User";
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
@@ -38,6 +39,12 @@ export const POST = async (req, res) => {
       };
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
+
+      await User.updateOne(
+        { _id: userId },
+        { $push: { orders: { sessionId: session.id, cart: cart } } }
+      );
+
 
       return new Response(JSON.stringify(session), { status: 200 });
     } catch (err) {
