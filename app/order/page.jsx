@@ -8,9 +8,9 @@ const Order = () => {
   const { data: session } = useSession()
 
   const orders = session?.user?.orders
-
+console.log("dvsdvsdvsdvsdvs", session?.user)
   return (
-    <div className="bajar">
+   
    
       <div className="orders">
         <h1>Your Order</h1>
@@ -44,7 +44,7 @@ const Order = () => {
           ))}
         </div>
       </div>
-    </div>
+ 
   )
 }
 

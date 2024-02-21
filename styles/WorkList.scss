@@ -13,4 +13,8 @@
     padding: 0 120px;
    
   }
+
+  @include sm {
+    padding: 0 4px;
+  }
 }

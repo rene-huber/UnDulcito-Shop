@@ -1,15 +1,11 @@
 @import "./variables.module.scss";
 @import "./breakpoints.scss";
 
-.bajar {
-  padding-top: 210px;
-}
-.bajar2 {
-  padding-top: 333px;
-}
 
 .orders {
   margin: 50px 100px 70px;
+  padding-top: 190px ;
+  padding-bottom: 111px;
 
   @include ml {
     margin: 50px 50px 70px;
