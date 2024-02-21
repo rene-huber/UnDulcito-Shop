@@ -1,6 +1,4 @@
 "use client";
-
-
 import {
   AddCircle,
   ArrowCircleLeft,
@@ -9,10 +7,10 @@ import {
 } from "@mui/icons-material";
 import { useSession } from "next-auth/react";
 import Loader from "@/components/Loader";
-
 import "@/styles/Cart.scss";
 import getStripe from "@/utils/getStripe";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 const Cart = () => {
   const { data: session, update } = useSession();
@@ -110,11 +108,11 @@ const Cart = () => {
               {cart?.map((item, index) => (
                 <div className="item" key={index}>
                   <div className="item_info">
-                    <img src={item.image} alt="product" />
+                    <Image src={item.image} alt="product" width={60} height={40}/>
                     <div className="text">
                       <h3>{item.title}</h3>
-                      <p>Category: {item.category}</p>
-                      <p>Seller: {item.creator.username}</p>
+                      
+                     
                     </div>
                   </div>
 
@@ -123,7 +121,7 @@ const Cart = () => {
                       onClick={() => increaseQty(item)}
                       sx={{
                         fontSize: "18px",
-                        color: "grey",
+                        color: "gey",
                         cursor: "pointer",
                       }}
                     />
@@ -132,7 +130,7 @@ const Cart = () => {
                       onClick={() => decreaseQty(item)}
                       sx={{
                         fontSize: "18px",
-                        color: "grey",
+                        color: "gey",
                         cursor: "pointer",
                       }}
                     />
@@ -145,9 +143,10 @@ const Cart = () => {
 
                   <div className="remove">
                     <Delete
-                      sx={{ cursor: "pointer" }}
+                      sx={{ cursor: "pointer" , fontSize: "25px",}}
                       onClick={() => removeFromCart(item)}
                     />
+                
                   </div>
                 </div>
               ))}
