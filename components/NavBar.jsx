@@ -66,9 +66,8 @@ const Navbar = () => {
       </div>
 
       <div className='navbar_right'>
-      <a href="/login">
+      <Link href="/login"></Link>
 
-</a>
 {user ? (
   <Link href="/cart" className="cart">
     <ShoppingCart sx={{ color: "white" }}/>

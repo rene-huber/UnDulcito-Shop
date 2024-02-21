@@ -2,7 +2,15 @@
 @import "./variables.module.scss";
 
 .bajar {
-  padding-top: 210px;
+  padding-top: 190px;
+}
+
+.noItem{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: red;
+
 }
 
 .title-list {
