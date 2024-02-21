@@ -215,8 +215,7 @@ const ProductDetails = () => {
 
         <p>{work.description}</p>
 
-        <p>Category: {work.category}</p>
-
+     
         <h1>${work.price}</h1>
         <button type="submit" onClick={addToCart}>
           <ShoppingCart />

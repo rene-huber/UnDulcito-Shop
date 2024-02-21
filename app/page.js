@@ -3,7 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/NavBar";
 import Slider from "@/components/slider/Slider";
 import Adresse from "@/components/Adresse/Adresse";
-import Footer from "@/components/Footer";
+
 
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     <Slider />
       <Feed />
       <Adresse />
-      <Footer />
+    
     </main>
   );
 }

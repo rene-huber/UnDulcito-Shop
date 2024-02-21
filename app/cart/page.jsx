@@ -11,6 +11,7 @@ import "@/styles/Cart.scss";
 import getStripe from "@/utils/getStripe";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import Link from "next/link";
 
 const Cart = () => {
   const { data: session, update } = useSession();
@@ -152,9 +153,9 @@ const Cart = () => {
               ))}
 
               <div className="bottom">
-                <a href="/">
+                <Link href="/">
                   <ArrowCircleLeft /> Continue Shopping
-                </a>
+                </Link>
                 <button onClick={handleCheckout}>CHECK OUT NOW</button>
               </div>
             </div>
