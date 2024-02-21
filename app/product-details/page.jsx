@@ -16,7 +16,7 @@ import {
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-const WorkDetails = () => {
+const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [work, setWork] = useState({});
 
@@ -227,4 +227,4 @@ const WorkDetails = () => {
   );
 };
 
-export default WorkDetails;
+export default ProductDetails;

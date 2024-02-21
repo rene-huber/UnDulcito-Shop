@@ -73,7 +73,7 @@ const WorkCard = ({ work }) => {
     <div
       className="work-card"
       onClick={() => {
-        router.push(`/work-details?id=${work._id}`);
+        router.push(`/product-details?id=${work._id}`);
       }}
     >
       <div className="slider-container">
@@ -83,7 +83,7 @@ const WorkCard = ({ work }) => {
         >
           {work.workPhotoPaths?.map((photo, index) => (
             <div className="slide" key={index}>
-              <Image src={photo} alt="work" width={300} height={200}/>
+              <Image src={photo} alt="work" width={320} height={250} className="imagen"/>
               <div
                 className="prev-button"
                 onClick={(e) => {
