@@ -1,6 +1,7 @@
 "use client"
 
 
+import Loader from "@/components/Loader"
 import "@/styles/Order.scss"
 import { useSession } from "next-auth/react"
 
@@ -9,7 +10,7 @@ const Order = () => {
 
   const orders = session?.user?.orders
 console.log("dvsdvsdvsdvsdvs", session?.user)
-  return (
+  return !orders? <Loader />: (
    
    
       <div className="orders">

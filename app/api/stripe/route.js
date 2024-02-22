@@ -13,13 +13,13 @@ export const POST = async (req, res) => {
         payment_method_types: ["card"],
         billing_address_collection: "auto",
         shipping_options: [
-          { shipping_rate: "shr_1OMubtDgraNiyvtnPzxjMBKT" },
-          { shipping_rate: "shr_1MfufhDgraNiyvtnDGef2uwK" },
+          { shipping_rate: "shr_1OmMYVHbtNNuri6pVSfy3o6g" },
+          { shipping_rate: "shr_1OmMS0HbtNNuri6pqZsY8rDh" },
         ],
         line_items: cart?.map((item) => {
           return {
             price_data: {
-              currency: "cad",
+              currency: "usd",
               product_data: {
                 name: item.title,
                 images: [`${req.headers.get("origin")}/${item.image}`],
@@ -40,10 +40,10 @@ export const POST = async (req, res) => {
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
 
-      await User.updateOne(
-        { _id: userId },
-        { $push: { orders: { sessionId: session.id, cart: cart } } }
-      );
+      // await User.updateOne(
+      //   { _id: userId },
+      //   { $push: { orders: { sessionId: session.id, cart: cart } } }
+      // );
 
 
       return new Response(JSON.stringify(session), { status: 200 });

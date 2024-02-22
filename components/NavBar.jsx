@@ -107,6 +107,7 @@ const Navbar = () => {
             <Link href="/wishlist"><FavoriteIcon sx={{ color: "red" ,fontSize: 17, marginRight: 1}}/> Wishlist</Link>
             <Link href="/cart"><ShoppingCart sx={{ color: "red",fontSize: 17, marginRight: 1 }}/> Cart</Link>
             <Link href="/order"><ListAltIcon sx={{color: "red",fontSize: 17, marginRight: 1}}/> Orders</Link>
+            
             {admin === "admin" && <Link href="/create">Create</Link>}
             <a onClick={handleLogout}><LogoutIcon sx={{color: "red",fontSize: 17, marginRight: 1}}/>Log Out</a>
           </div>
