@@ -35,7 +35,7 @@ const ProductDetails = () => {
   /* GET WORK DETAILS */
   useEffect(() => {
     const getWorkDetails = async () => {
-      const response = await fetch(`https://un-dulcito-shop.vercel.app/api/work/${workId}`, {
+      const response = await fetch(`/api/work/${workId}`, {
         method: "GET",
       });
       const data = await response.json();
