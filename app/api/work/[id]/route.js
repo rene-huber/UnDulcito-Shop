@@ -44,13 +44,13 @@ export const PATCH = async (req, { params }) => {
         const buffer = Buffer.from(bytes);
 
         // Define the destination path for the uploaded file
-        const workImagePath = `/Users/pro/Desktop/tienda/public/uploads/${photo.name}`;
+        const workImagePath = `/public/uploads/${photo.name}`;
 
         // Write the buffer to the filessystem
         await writeFile(workImagePath, buffer);
 
         // Store the file path in an array
-        workPhotoPaths.push(`/uploads/${photo.name}`);
+        workPhotoPaths.push(`/public/uploads/${photo.name}`);
       } else {
         // If it's an old photo
         workPhotoPaths.push(photo);
