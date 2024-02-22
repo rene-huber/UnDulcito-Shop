@@ -30,7 +30,10 @@ export async function POST (req) {
       const buffer = Buffer.from(bytes)
 
       // Define the destination path for the uploaded file
-      const workImagePath = `/Users/pro/Desktop/tienda/public/uploads/${photo.name}`
+      // const workImagePath = `/Users/pro/Desktop/tienda/public/uploads/${photo.name}`
+      const workImagePath = `https://un-dulcito-shop.vercel.app/uploads/${photo.name}`;
+
+
 
       // Write the buffer to the filessystem
       await writeFile(workImagePath, buffer)
