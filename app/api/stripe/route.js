@@ -40,10 +40,6 @@ export const POST = async (req, res) => {
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
 
-      // await User.updateOne(
-      //   { _id: userId },
-      //   { $push: { orders: { sessionId: session.id, cart: cart } } }
-      // );
 
 
       return new Response(JSON.stringify(session), { status: 200 });
