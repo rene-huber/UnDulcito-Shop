@@ -24,9 +24,7 @@ const Feed = () => {
     getWorkList();
   }, [selectedCategory]);
 
-  return loading ? (
-    <Loader />
-  ) : (
+  return (
     <div>
       <div className="categories">
         {categories?.map((item, index) => (
