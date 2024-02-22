@@ -31,7 +31,7 @@ export async function POST (req) {
 
       // Define the destination path for the uploaded file
       // const workImagePath = `/Users/pro/Desktop/tienda/public/uploads/${photo.name}`
-      const workImagePath = `https://un-dulcito-shop.vercel.app/uploads/${photo.name}`;
+      const workImagePath = `/uploads/${photo.name}`;
 
 
 
