@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import ProductDetails from '@/components/ProductDetails'
 
-function page() {
+function ProductDetail() {
   return 
  <>
   <Suspense>
@@ -12,4 +12,4 @@ function page() {
   
 }
 
-export default page
+export default ProductDetail
