@@ -38,7 +38,7 @@ const Slider = () => {
       
         <SwiperSlide>      
     <p className="texto">Where Every Bite <br />is a Sweet Journey.<br />
-   <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you'll find a 
+   <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you find a 
     tempting selection of homemade cookies, each one crafted with care and the finest ingredients</span> 
 
     </p>     
@@ -48,14 +48,14 @@ const Slider = () => {
 
          <SwiperSlide>
         <p className="texto">Baked with Love,<br />Enjoyed with a Smile.<br />
-        <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you'll find a 
+        <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you find a 
     tempting selection of homemade cookies, each one crafted with care and the finest ingredients</span>  </p>
          <Image src="/slider/slide3.jpg" alt="slider" width={1772}  height={886}/>
         </SwiperSlide>
 
        <SwiperSlide>
         <p className="texto">Every Number Count <br />with Sweetness.<br />
-        <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you'll find a 
+        <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you find a 
     tempting selection of homemade cookies, each one crafted with care and the finest ingredients</span> </p>
         <Image src="/slider/galletasMix.jpg" alt="slider" width={1772}  height={886}/>
         </SwiperSlide> 
