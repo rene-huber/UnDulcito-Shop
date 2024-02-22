@@ -31,7 +31,7 @@ export async function POST (req) {
 
       // Define the destination path for the uploaded file
       // const workImagePath = `/Users/pro/Desktop/tienda/public/uploads/${photo.name}`
-      const workImagePath = `/uploads/${photo.name}`;
+      const workImagePath = `/public/uploads/${photo.name}`;
 
 
 
@@ -39,7 +39,7 @@ export async function POST (req) {
       await writeFile(workImagePath, buffer)
 
       // Store the file path in an array
-      workPhotoPaths.push(`/uploads/${photo.name}`)
+      workPhotoPaths.push(`/public/uploads/${photo.name}`)
     }
 
     /* Create a new Work */
