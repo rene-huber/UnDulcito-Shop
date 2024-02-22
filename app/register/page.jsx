@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
 import Image from "next/image";
 
-import "@/styles/register.scss"
+import "@/styles/Register.scss"
 import Link from "next/link";
 
 const Register = () => {

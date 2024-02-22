@@ -1,9 +1,11 @@
 @import "./variables.module.scss";
 @import "./breakpoints.scss";
 
+@import "./variables.module.scss";
+@import "./breakpoints.scss";
+
 .success {
-  
-  padding-top:200px ;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,18 +14,42 @@
 
   h1 {
     color: $pinkred;
+    font-size: 2.5rem; // Tamaño de fuente más grande
+    margin-bottom: 10px; // Margen inferior reducido
   }
 
   p {
-    margin: 20px 0 50px;
-    font-size: 20px
+    margin: 20px 0;
+    font-size: 1.2rem; // Tamaño de fuente aumentado
+    text-align: center; // Alineación central del texto
   }
 
-  a {
-    @include buttonStyle;
-
+  .buttonStyle {
+    margin-top: 30px; // Espacio extra entre el botón y el párrafo
+    background-color: rgb(255, 0, 98);
+    padding: 12px 25px; // Aumenté el relleno para un aspecto más espacioso
+    color: white;
+    border-radius: 11px;
+    display: inline-flex; // Cambiado a inline-flex para mantener el texto junto al icono
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; // Efecto de transición suave al pasar el ratón
     &:hover {
-      box-shadow: 0 0 10px 3px rgb(98, 98, 98);
+      background-color: darken(rgb(255, 0, 98), 10%); // Color ligeramente más oscuro al pasar el ratón
+      box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2); // Sombra sutil al pasar el ratón
+    }
+  }
+
+  .continue {
+    margin-top: 40px; // Espacio extra entre el enlace y el botón
+    text-decoration: none;
+    color: $pinkred; // Cambiado el color del enlace para que coincida con el tema
+    font-weight: bold; // Texto en negrita
+    font-size: 1.2rem; // Tamaño de fuente igual al del párrafo
+    transition: color 0.3s ease; // Efecto de transición suave al pasar el ratón
+    &:hover {
+      color: darken($pinkred, 10%); // Color ligeramente más oscuro al pasar el ratón
     }
   }
 }
