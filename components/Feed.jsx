@@ -14,7 +14,7 @@ const Feed = () => {
   const [workList, setWorkList] = useState([]);
   
   const getWorkList = async () => {
-    const response = await fetch(`https://un-dulcito-shop.vercel.app/api/work/list/${selectedCategory}`, {cache: 'force-cache'});
+    const response = await fetch(`/api/work/list/${selectedCategory}`, {cache: 'force-cache'});
     const data = await response.json();
     setWorkList(data);
     setLoading(false);
@@ -24,7 +24,9 @@ const Feed = () => {
     getWorkList();
   }, [selectedCategory]);
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div>
       <div className="categories">
         {categories?.map((item, index) => (
