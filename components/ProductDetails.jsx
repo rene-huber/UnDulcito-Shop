@@ -3,8 +3,7 @@
 import "@/styles/WorkDetails.scss";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import Loader from "@/components/loading/Loader"
-
+import Loader from "@/components/Loader";
 
 import {
   ArrowForwardIos,
@@ -18,12 +17,20 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const WorkDetails = () => {
+const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [work, setWork] = useState({});
 
   const searchParams = useSearchParams();
   const workId = searchParams.get("id");
+
+
+  const [quantity, setQuantity] = useState(1); // Estado para almacenar la cantidad seleccionada por el usuario
+
+  const handleQuantityChange = (event) => {
+    setQuantity(parseInt(event.target.value)); // Actualiza la cantidad seleccionada cuando el usuario cambia el valor en el campo de entrada
+  };
+
 
   /* GET WORK DETAILS */
   useEffect(() => {
@@ -115,23 +122,29 @@ const WorkDetails = () => {
       category: work.category,
       creator: work.creator,
       price: work.price,
-      quantity: 1,
+      quantity: quantity,
     };
 
     if (!isInCart) {
       const newCart = [...cart, newCartItem];
 
       try {
-        await fetch(`/api/user/${userId}/cart`, {
+        const res = await fetch(`/api/user/${userId}/cart`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ cart: newCart }),
         });
-        update({ user: { cart: newCart } });
+
+        if (res.ok) {
+          update({ user: { cart: newCart } });
+          router.push("/cart");
+        } else {
+          console.error("Error al actualizar el carrito:", res.statusText);
+        }
       } catch (err) {
-        console.log(err);
+        console.error("Error de red o de servidor:", err);
       }
     } else {
       confirm("This item is already in your cart");
@@ -139,13 +152,13 @@ const WorkDetails = () => {
     }
   };
 
-  console.log(session?.user?.cart);
+
 
   return loading ? (
     <Loader />
   ) : (
-    <>
-
+    <div>
+     
       <div className="work-details">
         <div className="title">
           <h1>{work.title}</h1>
@@ -178,7 +191,7 @@ const WorkDetails = () => {
           >
             {work.workPhotoPaths?.map((photo, index) => (
               <div className="slide" key={index}>
-                <img src={photo} alt="work" />
+                <Image src={photo} alt="work" width={700} height={500}/>
                 <div className="prev-button" onClick={(e) => goToPrevSlide(e)}>
                   <ArrowBackIosNew sx={{ fontSize: "15px" }} />
                 </div>
@@ -192,7 +205,7 @@ const WorkDetails = () => {
 
         <div className="photos">
           {work.workPhotoPaths?.slice(0, visiblePhotos).map((photo, index) => (
-            <Image width={100} height={100}
+            <img
               src={photo}
               alt="work-demo"
               key={index}
@@ -209,19 +222,29 @@ const WorkDetails = () => {
           )}
         </div>
 
-        
-
-        <h3>About this product</h3>
         <p>{work.description}</p>
 
-        <h1>${work.price}</h1>
+        <div className="quantity-selector">
+        <label htmlFor="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          value={quantity}
+          onChange={handleQuantityChange}
+        />
+      </div>
+
+
+      <h1>Price: ${work.price * quantity}</h1>
         <button type="submit" onClick={addToCart}>
           <ShoppingCart />
           ADD TO CART
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
-export default WorkDetails;
+export default ProductDetails;
