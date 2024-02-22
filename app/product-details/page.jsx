@@ -1,8 +1,13 @@
+import { Suspense } from 'react'
 import ProductDetails from '@/components/ProductDetails'
-import React from 'react'
 
 function page() {
-  return <ProductDetails />
+  return 
+  <Suspense fallback={<div>Loading...</div>}>
+
+    <ProductDetails />
+  </Suspense>
+  
 }
 
 export default page

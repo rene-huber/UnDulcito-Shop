@@ -1,8 +1,12 @@
+import { Suspense } from 'react'
 import Update from '@/components/Update'
-import React from 'react'
 
 function UpdateWork() {
-  return <Update />
+  return 
+  <Suspense fallback={<div>Loading...</div>}>
+
+    <Update />
+  </Suspense>
 }
 
 export default UpdateWork

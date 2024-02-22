@@ -1,8 +1,12 @@
 import Shop from '@/components/Shop'
-import React from 'react'
+import { Suspense } from 'react'
 
 function page() {
-  return <Shop />
+  return 
+  <Suspense fallback={<div>Loading...</div>}>
+  <Shop />
+</Suspense>
+
 }
 
 export default page
