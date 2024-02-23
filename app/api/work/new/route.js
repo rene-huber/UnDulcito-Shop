@@ -48,7 +48,6 @@ export async function POST(req) {
       title,
       description,
       price,
-      workPhotoPaths,
     });
 
     await newWork.save();
