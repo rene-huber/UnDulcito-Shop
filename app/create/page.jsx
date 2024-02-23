@@ -39,7 +39,7 @@ const CreateWork = () => {
         newWorkForm.append("workPhotoPaths", photo)
       })
 
-      const response = await fetch("/api/work/new", {
+      const response = await fetch(`/api/work/new`, {
         method: "POST",
         body: newWorkForm
       })
