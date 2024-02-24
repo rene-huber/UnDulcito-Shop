@@ -1,5 +1,6 @@
 import { connectToDB } from "@/mongodb/dataBase";
 import { writeFile } from "fs/promises";
+import path from "path";
 import Work from "@/models/work";
 
 export async function POST(req) {
@@ -31,8 +32,9 @@ export async function POST(req) {
 
       //for localhost:3000 this was the path for the images
       // const workImagePath = `/Users/pro/Desktop/tienda/public/uploads/${photo.name}`
+      // const workImagePath = `/uploads/${photo.name}`;
 
-      const workImagePath = `/uploads/${photo.name}`;
+      const workImagePath = path.join("uploads", photo.name);
 
       // Write the buffer to the filessystem
       await writeFile(workImagePath, buffer);
