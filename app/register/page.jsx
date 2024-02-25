@@ -7,47 +7,33 @@ import Image from "next/image";
 
 import "@/styles/Register.scss"
 import Link from "next/link";
+import { set } from "mongoose";
 
 const Register = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    profileImage: null,
-  });
+const CLOUD_NAME = "huberlin";
+const UPLOAD_PRESET = "blog13";
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    const { name, value, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-      [name]: name === "profileImage" ? files[0] : value,
-    });
-  };
+const [username, setUsername] = useState("")
+const [email, setEmail] = useState("")
+const [password, setPassword] = useState("")
+const [confirmPassword, setConfirmPassword] = useState("")
+const [photo, setPhoto] = useState(null)  
+
+console.log(username, email, password, confirmPassword, photo)
 
   const router = useRouter();
-
   const [passwordMatch, setPasswordMatch] = useState(true);
+  useEffect(() => {setPasswordMatch(password === confirmPassword)})
 
-  useEffect(() => {
-    setPasswordMatch(formData.password === formData.confirmPassword);
-  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const registerForm = new FormData();
-
-      for (var key in formData) {
-        registerForm.append(key, formData[key]);
-      }
-
+      const profileImage = await uploadImage(photo);
+      
       const response = await fetch("/api/register/", {
         method: "POST",
-        body: registerForm,
+        body: JSON.stringify({username, email, password, confirmPassword, profileImage}), 
       });
 
       if (response.ok) {
@@ -62,6 +48,33 @@ const Register = () => {
     signIn("github", { callbackUrl: "/" });
   };
 
+  const uploadImage = async () => {
+    if (!photo) return
+
+    const formData = new FormData()
+
+    formData.append("file", photo)
+    formData.append("upload_preset", UPLOAD_PRESET)
+
+    try {
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+        method: "POST",
+        body: formData
+      })
+
+      const data = await res.json()
+
+      const profileImage = data['secure_url']
+
+      return profileImage
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+
   return (
     <div className="register">
      <img src="/login.jpg" alt="login" className="register_decor" />
@@ -70,32 +83,32 @@ const Register = () => {
           <input
             placeholder="Username"
             name="username"
-            value={formData.username}
-            onChange={handleChange}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
           <input
             placeholder="Email"
             type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input
             placeholder="Password"
             type="password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
           <input
             placeholder="Confirm Password"
             type="password"
             name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
+            value={confirmPassword}
+            onChange={(e) =>  setConfirmPassword(e.target.value)}
             required
           />
           {!passwordMatch && (
@@ -105,7 +118,7 @@ const Register = () => {
             id="image"
             type="file"
             name="profileImage"
-            onChange={handleChange}
+            onChange={(e) => setPhoto(e.target.files[0])}
             accept="image/*"
             style={{ display: "none" }}
             required
@@ -114,9 +127,9 @@ const Register = () => {
             <Image src="/addImage.png" alt="add profile" width={45} height={45} />
             <p>Upload Profile Photo</p>
           </label>
-          {formData.profileImage && (
+          {photo && (
             <img
-              src={URL.createObjectURL(formData.profileImage)}
+              src={URL.createObjectURL(photo)}
               alt="Profile"
               style={{ maxWidth: "80px", maxHeight: "100px" }}
             />

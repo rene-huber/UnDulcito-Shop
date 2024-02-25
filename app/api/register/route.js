@@ -7,25 +7,16 @@ import { writeFile } from "fs/promises"
 
 export async function POST (req) {
   
-    try {
-   
+    try {   
     await connectToDB()
+  
+const { username, email, password,  profileImage } = await req.json()
 
-    const data = await req.formData()
-    const username = data.get('username')
-    const email = data.get('email')
-    const password = data.get('password')
-    const file = data.get('profileImage')
 
-    if (!file) {
+    if (!profileImage) {
       return NextResponse.json({ message: "No file uploaded" }, { status: 400 })
     }
 
-    const bytes = await file.arrayBuffer()
-    const buffer = Buffer.from(bytes)
-
-    const profileImagePath=`/Users/pro/Desktop/tienda/public/uploads/${file.name}`
-    await writeFile(profileImagePath, buffer)
     
     const existingUser = await User.findOne({ email })
     if (existingUser) {
@@ -39,7 +30,7 @@ export async function POST (req) {
       username,
       email,
       password: hashedPassword,
-      profileImagePath: `/uploads/${file.name}`
+      profileImagePath : profileImage
     })
 
     await newUser.save()
