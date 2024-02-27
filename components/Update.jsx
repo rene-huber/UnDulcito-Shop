@@ -9,14 +9,20 @@ import { useSession } from "next-auth/react";
 
 
 const UpdateWork = () => {
+  const CLOUD_NAME = "huberlin";
+  const UPLOAD_PRESET = "blog13";
+  
   const { data: session } = useSession();
-
+  const router = useRouter();
+  
   const [loading, setLoading] = useState(true);
-
+  
   const searchParams = useSearchParams();
   const workId = searchParams.get("id");
+  
 
   const [work, setWork] = useState({
+    creator: "",
     category: "",
     title: "",
     description: "",
@@ -35,6 +41,7 @@ const UpdateWork = () => {
       const data = await response.json();
 
       setWork({
+        creator: data.creator,
         category: data.category,
         title: data.title,
         description: data.description,
@@ -50,25 +57,56 @@ const UpdateWork = () => {
     }
   }, [workId]);
 
-  const router = useRouter();
+
+
+  const uploadImage = async (photos) => {
+    if (!work.photos || work.photos.length === 0) return [];
+  
+    const uploadedImages = [];
+  
+    for (let i = 0; i < work.photos.length; i++) {
+      const formData = new FormData();
+      formData.append("file", work.photos[i]);
+      formData.append("upload_preset", UPLOAD_PRESET);
+  
+      try {
+        const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+          method: "POST",
+          body: formData
+        });
+  
+        const data = await res.json();
+        const imageUrl = data['secure_url'];
+        uploadedImages.push(imageUrl);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  
+    return uploadedImages;
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     try {
-      const updateFormWork = new FormData()
+     
+      const uploadedImages = await uploadImage(work.photos);
 
-      for (var key in work) {
-        updateFormWork.append(key, work[key])
-      }
-
-      work.photos.forEach((photo) => {
-        updateFormWork.append("workPhotoPaths", photo)
-      })
+      const creator = work.creator
+        const category=  work.category
+        const title=  work.title
+        const description=  work.description
+        const price=  work.price
+        const photos=  uploadedImages
 
       const response = await fetch(`/api/work/${workId}`, {
         method: "PATCH",
-        body: updateFormWork
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ creator, category, title, description, price, photos })
       })
 
       if (response.ok) {

@@ -1,6 +1,7 @@
 import Work from "@/models/work";
 import { connectToDB } from "@/mongodb/dataBase";
-import { writeFile } from "fs/promises"
+import { writeFile } from "fs/promises";
+import { NextResponse } from "next/server";
 
 export const GET = async (req, { params }) => {
   try {
@@ -19,58 +20,20 @@ export const GET = async (req, { params }) => {
 export const PATCH = async (req, { params }) => {
   try {
     await connectToDB();
+    const { creator, category, title, description, price, photos } =
+      await req.json();
 
-    const data = await req.formData();
-
-    /* Extract info from the data */
-    const creator = data.get("creator");
-    const category = data.get("category");
-    const title = data.get("title");
-    const description = data.get("description");
-    const price = data.get("price");
-
-    /* Get an array of uploaded photos */
-    const photos = data.getAll("workPhotoPaths");
-
-    const workPhotoPaths = [];
-
-    /* Process and store each photo  */
-    for (const photo of photos) {
-      if (photo instanceof Object) {
-        // Read the photo as an ArrayBuffer
-        const bytes = await photo.arrayBuffer();
-
-        // Convert it to a Buffer
-        const buffer = Buffer.from(bytes);
-
-        // Define the destination path for the uploaded file
-    
-        const workImagePath = `./public/uploads/${photo.name}`;
-
-        // Write the buffer to the filessystem
-        await writeFile(workImagePath, buffer);
-
-        // Store the file path in an array
-        workPhotoPaths.push(`./public/uploads/${photo.name}`);
-      } else {
-        // If it's an old photo
-        workPhotoPaths.push(photo);
-      }
-    }
-
-    /* Find the existing Work */
     const existingWork = await Work.findById(params.id)
 
     if (!existingWork) {
       return new Response("The Work Not Found", { status: 404 });
     }
-
-    /* Update the Work with the new data */
+   
     existingWork.category = category
     existingWork.title = title
     existingWork.description = description
     existingWork.price = price
-    existingWork.workPhotoPaths = workPhotoPaths
+    existingWork.workPhotoPaths = photos
 
     await existingWork.save()
 
@@ -83,12 +46,12 @@ export const PATCH = async (req, { params }) => {
 
 export const DELETE = async (req, { params }) => {
   try {
-    await connectToDB()
-    await Work.findByIdAndDelete(params.id)
-  
-    return new Response("Successfully deleted the Work", { status: 200 })
+    await connectToDB();
+    await Work.findByIdAndDelete(params.id);
+
+    return new Response("Successfully deleted the Work", { status: 200 });
   } catch (err) {
-    console.log(err)
-    return new Response("Error deleting the Work", { status: 500 })
+    console.log(err);
+    return new Response("Error deleting the Work", { status: 500 });
   }
-}
+};
