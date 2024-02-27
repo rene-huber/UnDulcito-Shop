@@ -14,8 +14,8 @@ const Feed = () => {
   const [workList, setWorkList] = useState([]);
   
   const getWorkList = async () => {
-    const response = await fetch(`/api/work/list/${selectedCategory}`, {cache: 'no-store'});
-    // const response = await fetch(`/api/work/list/${selectedCategory}`, {cache: 'force-cache'});
+    // const response = await fetch(`/api/work/list/${selectedCategory}`, {cache: 'no-store'});
+    const response = await fetch(`/api/work/list/${selectedCategory}`, {cache: 'force-cache'});
     const data = await response.json();
     setWorkList(data);
     setLoading(false);
