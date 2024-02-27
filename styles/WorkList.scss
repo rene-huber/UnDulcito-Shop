@@ -9,10 +9,15 @@
   row-gap: 51px;
   column-gap: 41px;
 
+  @include xxl {
+    padding: 0;
+  }
+
   @include lg {
     padding: 0 120px;
    
   }
+
 
   @include sm {
     padding: 0 4px;

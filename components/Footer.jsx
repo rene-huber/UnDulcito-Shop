@@ -12,8 +12,17 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer_logo">
-        {/* <Image src="/logo.png" alt="Logo" width={70} height={40}/> */}
+        <Image src="/logoFooter.png" alt="Logo" width={35} height={25}/> 
+        <span>Un Dulcito © 2024.</span>
       </div>
+
+<div className='terms'>  
+<Link href="https://wa.me/123456789">&#8226;Chat</Link>     
+        <Link href="/terms">&#8226;Terms and Conditions</Link>
+        <Link href="/privacy">&#8226;Privacy Policy</Link>
+      </div>
+
+
       <div className="footer_social">
         <Link href="https://www.instagram.com/"><InstagramIcon sx={{ color: "white" ,fontSize: 30, marginRight: 1, marginLeft: 1  }} /></Link>
         <Link href="https://www.facebook.com/"><FacebookIcon sx={{ color: "white" ,fontSize: 30, marginRight: 1, marginLeft: 0  }} /></Link>

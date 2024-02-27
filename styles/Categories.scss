@@ -8,6 +8,14 @@
   gap: 10px;
  
 
+
+  @include mm {
+   width: 91%;
+  }
+  @include sm {
+    width: 100%;
+  }
+
 }
 
 

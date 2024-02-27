@@ -39,7 +39,7 @@
   }
 
   @include sm {
-    padding: 100px 20px 120px;
+    padding: 149px 20px 120px;
   }
 
   .title {
@@ -98,6 +98,8 @@
         img {
           width: 100%;
           height: 100%;
+          border: 1px solid #c4c4c4;
+    border-radius: 11px;
         }
 
         .prev-button,

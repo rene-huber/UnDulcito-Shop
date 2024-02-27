@@ -8,6 +8,9 @@
   @include mm {
     padding: 40px 20px;
   }
+  @include sm {
+    padding: 145px 20px;
+  }
 
   h1 {
     color: $blue;
