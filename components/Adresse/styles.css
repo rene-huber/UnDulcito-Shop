@@ -1,7 +1,8 @@
 .wrap{
-    padding: 233px;
+    padding: 253px 5% 100px 5%;
     background: url(../../public/tolde.jpg)  no-repeat center top #fff;
 
+    text-align: center;
 
 }
 
