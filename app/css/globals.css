@@ -14,7 +14,9 @@ body {
 main {
   flex: 1; /* Hace que el contenido principal (main) ocupe todo el espacio disponible */
 }
-
+@media only screen and (max-width: 600px) {
+  main {flex: 0 ;}
+}
 a {
   color: inherit;
   text-decoration: none;

@@ -35,6 +35,8 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
   border-top:  2px solid #ff6400;
   border-bottom: 1px solid #ffffffe3;
 
+ 
+
   p {
     margin: 0;
     line-height: 19px;
@@ -44,46 +46,33 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
   .call {
     color: rgb(255, 255, 255);
     display: flex;
+    @media only screen and (max-width: 600px) {
+    a {
+      color: #945e5e;
+     }
+    }
   }
   
   .derecha {
     margin-right: 11%;
-    
+    @media only screen and (max-width: 977px) {
+      display: none ;
+    }
   }
   
-
+ 
   
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     align-items: center;
     padding:2px  0px; 
     font-size: 12px;
-    display: none ;
-
+ 
    
   }
 
 }
 
-
-.call {
-  color: rgb(255, 255, 255);
-
-  display: flex;
-
-}
-.derecha{ margin-right:199px}
-
-
-.person{
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.489);
-  border: 1px solid #ffffff6d;
-  padding: 3px 5px;
-  @media only screen and (max-width: 600px) {
-    background-color: #000000a3;
-  }
-}
 
 
 
@@ -110,6 +99,7 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
     padding: 1% 1% 1% 5%;
     background: #ff00001f;
     backdrop-filter: blur(4px);
+    margin-top: 46px;
     #hamburger{
       display: none;
     }

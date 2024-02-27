@@ -85,6 +85,21 @@
     mix-blend-mode: multiply
   }
 
+
+  @media only screen and (max-width: 1170px) {
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+    .texto{ left: 333px;}
+  }
+
+  @media only screen and (max-width: 890px) {
+    .texto{ left: 255px;}
+  
+.parrafo{ width: 445px};
+  }
+
+
   @media only screen and (max-width: 600px) {
     .texto {
       display: flex;    
@@ -109,7 +124,8 @@
     }
 
       .mySwiper{
-        height: 241px;}
+        height: 241px;
+      margin-top: 46px;}
 
     .swiper-slide img {
       opacity: .8;  }
