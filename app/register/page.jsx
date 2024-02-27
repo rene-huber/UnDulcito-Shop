@@ -28,6 +28,12 @@ console.log(username, email, password, confirmPassword, photo)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(!profileImage) {
+      console.log("Please upload an image")
+      return
+    }
+
     try {
       const profileImage = await uploadImage(photo);
       
@@ -50,6 +56,7 @@ console.log(username, email, password, confirmPassword, photo)
 
   const uploadImage = async () => {
     if (!photo) return
+
 
     const formData = new FormData()
 
