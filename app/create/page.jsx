@@ -18,7 +18,7 @@ const CreateWork = () => {
     price: "",
     photos: []
   })
-  console.log( )
+ 
   if (session) {work.creator = session?.user?._id}
 
   const uploadImage = async (photos) => {
@@ -63,7 +63,7 @@ const CreateWork = () => {
           const photos=  uploadedImages
         
   
-console.log("9879789797979797",  creator, category, title, description, price, photos)
+
 
       const response = await fetch(`/api/work/new`, {
         method: "POST",
