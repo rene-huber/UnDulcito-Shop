@@ -10,6 +10,17 @@
   align-items: center;
   background-color: rgb(255, 251, 254);
 
+
+  @include xl {
+    padding: 10px 1px;
+    width: 100%;
+  }
+
+  @include sm {
+    padding: 10px 1px;
+    width: 407px;
+  }
+
   &_decor {
     height: 450px;
     width: 300px;

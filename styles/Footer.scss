@@ -29,10 +29,18 @@
     justify-content: space-between;
     width: 100%;
     font-size: 14px;
-    max-width: 345px;
-    color: #fff;
+    max-width: 475px;
+    color: #912c10;
     margin-right: 89px;
     text-shadow: 7px 8px 15px rgba(50, 50, 50, 0.31);
+    gap: 20px;
+
+    span{color: #912c1075;}
+
+    @include xl{
+      gap: 10px;
+      max-width: 382px;
+    }
     
     @include ml{
       display: none;
@@ -42,5 +50,6 @@
   @include sm {
     flex-direction: column;
     margin-top: 93px;
+    gap: 11px;
   }
 }
