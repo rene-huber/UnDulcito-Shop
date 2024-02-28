@@ -1,5 +1,6 @@
 import "./styles.css";
 import Image from "next/image";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 
 function Adresse() {
@@ -8,7 +9,7 @@ function Adresse() {
 
       <div className="top">
       <h2>#UnDulcito</h2>
-      <button className="button">Order Now</button>
+      <button className="button"><InstagramIcon sx={{ color: "white" ,fontSize: 30, marginRight: 1, marginLeft: 1  }} /> Follow us in Instagram</button>
       </div>
 
     

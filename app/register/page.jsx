@@ -84,7 +84,7 @@ console.log(username, email, password, confirmPassword, photo)
 
   return (
     <div className="register">
-     <img src="/login.jpg" alt="login" className="register_decor" />
+     <Image src="/login.jpg" alt="login" className="register_decor" width={255} height={400} />
       <div className="register_content">
         <form className="register_content_form" onSubmit={handleSubmit}>
           <input
@@ -131,7 +131,7 @@ console.log(username, email, password, confirmPassword, photo)
             required
           />
           <label htmlFor="image">
-            <Image src="/addImage.png" alt="add profile" width={45} height={45} />
+            <Image src="/addImage.png" alt="add profile" width={35} height={25} />
             <p>Upload Profile Photo</p>
           </label>
           {photo && (
