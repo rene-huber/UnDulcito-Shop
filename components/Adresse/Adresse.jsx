@@ -8,19 +8,23 @@ function Adresse() {
     <main className="wrap">
 
       <div className="top">
-      <h2>#UnDulcito</h2>
-      <button className="button"><InstagramIcon sx={{ color: "white" ,fontSize: 30, marginRight: 1, marginLeft: 1  }} /> Follow us in Instagram</button>
+      <h1>#UnDulcito</h1>
+      {/* <button className="button"> Follow us in Instagram</button> */}
+      
+      The orders must be placed with 3 days advance notice
       </div>
 
     
-      The orders must be placed with 3 days advance notice
       
-    <h3>
+      <div className="contact">
+      <h2>
       Tel.+1321-7329403
-      </h3>
-      
+     <br />
+     undulcito2015@gmail.com</h2>
+     we will gladly
+attend you.
+      </div>
     
-    <h2>undulcito2015@gmail.com</h2>
 <div className="gif" >
 <Image src='/location.gif' alt="work" width={109} height={109} className="imagen"/>
 

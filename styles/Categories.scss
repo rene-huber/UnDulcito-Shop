@@ -6,15 +6,12 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
- 
-
-
-  @include mm {
-   width: 91%;
-  }
-  @include sm {
-    width: 100%;
-  }
+  
+  @include lg {    width: 89%;}
+  @include ml {    width: 89%;}
+  @include md {    width:100px;}  
+  @include mm {    width:100px;}    
+  @include sm {    width: 100%;  }
 
 }
 

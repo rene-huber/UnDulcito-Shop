@@ -1,19 +1,40 @@
-.button{
-    background: red;
-    border-radius: 11px ;
-    padding: 23px;
-    color: white;
-    border: none;
-}
 
 
 .wrap{
-    padding: 253px 5% 100px 5%;
+    padding: 233px 5% 100px 5%;
     background: url(../../public/tolde.jpg)  no-repeat center top #fff;
-
     text-align: center;
-
+    display: flex;
+    flex-direction: column;
+gap: 17px;
 }
+
+
+
+.top{
+     padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    h1{
+        font-size: 39px;
+    }
+}
+.contact{
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    h2 { line-height:35px; }
+}
+.gif{
+    
+    p {margin: 15px 0 11px 11px }
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .wrap{
