@@ -6,7 +6,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-gap: 17px;
+gap: 11px;
 }
 
 
@@ -32,6 +32,7 @@ gap: 17px;
 .gif{
     
     p {margin: 15px 0 11px 11px }
+    a {color: rgb(0, 0, 0); font-size: 13px; padding-top: 33px; }
 }
 
 
