@@ -2,24 +2,27 @@
 @import "./breakpoints.scss";
 
 .work-list {
-  padding: 0 40px 120px;
+  padding: 0 40px 120px 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   row-gap: 51px;
   column-gap: 41px;
 
-  @include xxl {
-    padding: 0;
-  }
+
+
+
 
   @include lg {
-    padding: 0 120px;
+    padding:  120px;
    
   }
 
+  @include mm {
+    padding: 75px 40px;
+  }
 
   @include sm {
-    padding: 0 4px;
+    padding: 69px 4px;
   }
 }
