@@ -1,6 +1,7 @@
 import "./styles.css";
 import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Link from "next/link";
 
 
 function Adresse() {
@@ -30,6 +31,8 @@ attend you.
 
 <p>Delivery Service / Pickup</p>
 <h2> Now Located in Saint Cloud, Florida</h2>
+<Link href="https://www.google.com/maps/place/St.+Cloud,+Florida,+EE.+UU./@50.2734174,8.8731668,5.3z/data=!4m6!3m5!1s0x88dd8e1775153549:0x53642186d1e0dabf!8m2!3d28.2488949!4d-81.2812895!16zL20vMHJweTI?entry=ttu">
+   [ view map ]</Link>
 </div>
 
     </main>

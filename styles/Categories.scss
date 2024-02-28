@@ -6,6 +6,8 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 57px;
+  color:#ff7272;
   
   @include lg {    width: 89%;}
   @include ml {    width: 89%;}
