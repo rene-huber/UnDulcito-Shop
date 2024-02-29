@@ -43,8 +43,8 @@ const Feed = () => {
 <div className="feedWrap">
 
       <WorkList data={workList} />
+      </div>
       <p>ALLERGY WARNING: <span> Our product may contain Milk, Soy, Nuts, Gluten and Peanuts</span> </p>
-</div>
     </div>
   );
 };
