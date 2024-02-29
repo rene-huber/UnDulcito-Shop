@@ -25,10 +25,10 @@ const ProductDetails = () => {
   const workId = searchParams.get("id");
 
 
-  const [quantity, setQuantity] = useState(1); // Estado para almacenar la cantidad seleccionada por el usuario
+  const [quantity, setQuantity] = useState(1); 
 
   const handleQuantityChange = (event) => {
-    setQuantity(parseInt(event.target.value)); // Actualiza la cantidad seleccionada cuando el usuario cambia el valor en el campo de entrada
+    setQuantity(parseInt(event.target.value));
   };
 
 
@@ -205,13 +205,17 @@ const ProductDetails = () => {
 
         <div className="photos">
           {work.workPhotoPaths?.slice(0, visiblePhotos).map((photo, index) => (
-            <img
-              src={photo}
-              alt="work-demo"
-              key={index}
-              onClick={() => handleSelectedPhoto(index)}
-              className={selectedPhoto === index ? "selected" : ""}
-            />
+          <Image
+          src={photo}
+          alt="work-demo"
+          key={index}
+          onClick={() => handleSelectedPhoto(index)}
+          className={`image ${selectedPhoto === index ? "selected" : ""}`}
+          width={694}	
+          height={694}
+         
+          
+        />
           ))}
 
           {visiblePhotos < work.workPhotoPaths.length && (

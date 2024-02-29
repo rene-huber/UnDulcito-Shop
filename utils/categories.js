@@ -2,8 +2,7 @@ export const categories = [
       
     "All",
     "Cookie",
-    "Pavlova",
-    "Cakes",
+    "Pavlova",   
     "Combos"
     
   ];

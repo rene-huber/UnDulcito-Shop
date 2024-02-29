@@ -222,16 +222,18 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
 
     &_accountmenu {
       position: absolute;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.842);
+      backdrop-filter: blur(6px);
       right: 37px;
       top: 113px;
       display: flex;
-      flex-direction: column;
+      flex-direction: column; 
       width: 200px;
       padding: 10px 0;
       border: 1px solid $lightgrey;
       border-radius: 20px;
       z-index: 9999;
+      
       @include shadow;
 
       @include sm {
@@ -245,6 +247,9 @@ background: linear-gradient(135deg,  rgba(249,221,142,1) 0%,rgba(242,191,133,1) 
         color: black;
         font-weight: 700;
         cursor: pointer;
+        display: flex;
+    align-items: center;
+
 
         &:hover {
           color: $pinkred;
