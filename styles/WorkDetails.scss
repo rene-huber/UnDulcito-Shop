@@ -29,6 +29,13 @@
   margin: 0 auto;
  border-radius: 11px;
 
+ .allergy{
+  margin-top: 50px ;
+  color: #ca4242;
+}
+span { color: black;
+    
+}
 
   @include xl {
     padding: 40px 80px 120px;
@@ -39,7 +46,7 @@
   }
 
   @include sm {
-    padding: 149px 20px 120px;
+    padding: 149px 20px 50px;
   }
 
   .title {
@@ -100,6 +107,7 @@
           height: 100%;
           border: 1px solid #c4c4c4;
     border-radius: 11px;
+    object-fit: contain;
         }
 
         .prev-button,
@@ -143,6 +151,7 @@
       cursor: pointer;
       width: 150px;
       height: auto;
+      object-fit: contain;
     }
 
     .selected {

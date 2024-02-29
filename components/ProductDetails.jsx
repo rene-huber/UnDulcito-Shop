@@ -191,7 +191,7 @@ const ProductDetails = () => {
           >
             {work.workPhotoPaths?.map((photo, index) => (
               <div className="slide" key={index}>
-                <Image src={photo} alt="work" width={700} height={500}/>
+                <Image src={photo} alt="work" width={500} height={500}/>
                 <div className="prev-button" onClick={(e) => goToPrevSlide(e)}>
                   <ArrowBackIosNew sx={{ fontSize: "15px" }} />
                 </div>
@@ -201,8 +201,8 @@ const ProductDetails = () => {
               </div>
             ))}
           </div>
+       
         </div>
-
         <div className="photos">
           {work.workPhotoPaths?.slice(0, visiblePhotos).map((photo, index) => (
           <Image
@@ -213,9 +213,8 @@ const ProductDetails = () => {
           className={`image ${selectedPhoto === index ? "selected" : ""}`}
           width={694}	
           height={694}
-         
-          
         />
+        
           ))}
 
           {visiblePhotos < work.workPhotoPaths.length && (
@@ -246,6 +245,7 @@ const ProductDetails = () => {
           <ShoppingCart />
           ADD TO CART
         </button>
+        <p className="allergy">ALLERGY WARNING: <span> Our product may contain <b>Milk</b>, <b>Soy</b>, <b>Nuts</b>, <b>Gluten</b> and <b>Peanuts</b>.</span> </p>
       </div>
     </div>
   );
