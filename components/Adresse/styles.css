@@ -6,10 +6,19 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 gap: 11px;
 }
 
+.tag{
+  
+    cursor: pointer;
 
+}
+.tag:hover{
+    color: rgb(255, 100, 100);
+    text-decoration: underline;
+}
 
 .top{
      padding: 20px 0;

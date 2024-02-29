@@ -5,6 +5,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton } from '@mui/material'
 import ListAltIcon from '@mui/icons-material/ListAlt';
+import LoginIcon from '@mui/icons-material/Login';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
@@ -89,7 +91,7 @@ const Navbar = () => {
           <Person sx={{ color: "white", fontSize: 25 }} /></div>
           ) : (<>
           <Menu sx={{ color: "white" }} id="hamburger"/>
-          <img src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} />
+          <Image src={user.profileImagePath} alt='profile' style={{ objectFit: "cover", borderRadius: "50%" }} width={35} height={35} />
           </>
           )}
         </button>
@@ -97,8 +99,8 @@ const Navbar = () => {
 
         {dropdownMenu && !user && (
           <div className='navbar_right_accountmenu'>
-            <Link href="/login">Log In</Link>
-            <Link href="/register">Sign Up</Link>
+            <Link href="/login"><LoginIcon sx={{ color: "#d00000", fontSize: 20 , marginRight: 1}} /> Log In</Link>
+            <Link href="/register"><PersonAddAltIcon sx={{ color: "#d00000", fontSize: 20 , marginRight: 1}} /> Sign Up</Link>
           </div>
         )}
 
