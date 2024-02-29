@@ -41,10 +41,10 @@ const Feed = () => {
         ))}
       </div>
 <div className="feedWrap">
-
       <WorkList data={workList} />
+
+      <p className="allergy">ALLERGY WARNING: <span> Our product may contain <b>Milk</b>, <b>Soy</b>, <b>Nuts</b>, <b>Gluten</b> and <b>Peanuts</b>.</span> </p>
       </div>
-      <p>ALLERGY WARNING: <span> Our product may contain Milk, Soy, Nuts, Gluten and Peanuts</span> </p>
     </div>
   );
 };

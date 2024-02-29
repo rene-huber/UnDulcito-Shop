@@ -102,6 +102,7 @@ console.log(username, email, password, confirmPassword, photo)
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          
           <input
             placeholder="Password"
             type="password"
