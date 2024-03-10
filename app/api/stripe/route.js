@@ -45,7 +45,7 @@ export const POST = async (req, res) => {
       return new Response(JSON.stringify(session), { status: 200 });
     } catch (err) {
       console.log(err);
-      return new Response("Failed to chaeckout", { status: 500 });
+      return new Response("Failed to chaeckout1", { status: 500 });
     }
   } else {
     res.setHeader("Allow", "POST");
