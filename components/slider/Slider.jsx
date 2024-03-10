@@ -47,16 +47,16 @@ const Slider = () => {
         </SwiperSlide>
 
          <SwiperSlide>
-        <p className="texto">Baked with Love,<br />Enjoyed with a Smile.<br />
-        <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you find a 
-    tempting selection of homemade cookies, each one crafted with care and the finest ingredients</span>  </p>
+        <p className="texto">Baked with Love,<br />Enjoyed with a Smile.<br />       
+        <span className="parrafo"> Delight in our strawberry pavlovas, crafted with care and bursting with flavor. Indulge in these homemade treats, each a 
+        delightful symphony of sweetness and joy</span>  </p>
          <Image src="/slider/slide3.jpg" alt="slider" width={1772}  height={886}/>
         </SwiperSlide>
 
        <SwiperSlide>
-        <p className="texto">Every Number Count <br />with Sweetness.<br />
-        <span className="parrafo"> Welcome to our sweet haven, where every cookie is a masterpiece of flavor and craftsmanship. At our online store, you find a 
-    tempting selection of homemade cookies, each one crafted with care and the finest ingredients</span> </p>
+        <p className="texto">Sweet Medley Mix: <br />Exploring Cookie Combinations<br />
+        <span className="parrafo"> Embark on a sweet journey through our Cookie Mix, where every combination is a delightful surprise. Indulge in a symphony
+         of flavors crafted to perfection, offering a taste adventure like no other.</span> </p>
         <Image src="/slider/galletasMix.jpg" alt="slider" width={1772}  height={886}/>
         </SwiperSlide> 
     
